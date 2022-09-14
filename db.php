@@ -4,7 +4,7 @@ class Dbh {
     public $host = "localhost";
     public $user = "root";
     public $pwd = "root";
-    public $dbName = "afspraak_db";
+    public $dbName = "speurtocht";
     public $conn;
 
     public function __construct(){
