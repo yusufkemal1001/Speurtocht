@@ -40,26 +40,27 @@ if (isset($_POST["submit"])){
 
 </head>
 <body>
-<form action="" method="post">
-    <h3>Login Here</h3>
+<form class="form1" action="" method="post">
+    <h3>Sign Up Here</h3>
 
-<div class="field input">    
-    <label for="username">Email</label>
-    <input type="text" name="email" placeholder="Enter email" id="email">
-</div>
+    <label for="username">Username</label>
+    <input type="text" name="username" placeholder="Username" id="username">
 
+    <label for="password">Password</label>
+    <input type="password" name="password" placeholder="Password" id="password">
 
-<div class="field input">
-          <label>Password</label>
-          <input type="password" name="password" placeholder="Enter password" required>
-          
-        </div>
+    <label for="password">Name</label>
+    <input type="password" name="password" placeholder="Password" id="password">
+
+    <label for="password">Email</label>
+    <input type="password" name="password" placeholder="Password" id="password">
 
     <button type="submit" name="submit">Log In</button>
-    <div class="link">Not yet signed up? <a href="signup.php">Signup now</a></div>
+    
+    <div class="link">Already signed up? <a href="login.php">Login now</a></div>
 </form>
 
-<script src="javascript/pass-show-hide.js"></script>
+  <script src="javascript/pass-show-hide.js"></script>
 
 </body>
 </html>
