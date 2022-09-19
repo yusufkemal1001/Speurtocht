@@ -3,7 +3,7 @@ session_start();
 class Dbh {
     public $host = "localhost";
     public $user = "root";
-    public $pwd = "";
+    public $pwd = "root";
     public $dbName = "speurtocht";
     public $conn;
 

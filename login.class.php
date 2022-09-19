@@ -14,7 +14,7 @@ class login extends Dbh{
 
         if ($result->num_rows > 0){
             if ($password==$row["password"]){
-                $this->id=$row["users_id"];
+                $this->ID=$row["ID"];
                 return 1;
             }
             else{
@@ -26,12 +26,12 @@ class login extends Dbh{
         }
     }
     public function idUser(){
-        return $this->id;
+        return $this->ID;
     }
 }
 class Select extends Dbh{
     public function selectUserById($id){
-        $result = mysqli_query($this->conn, "SELECT * FROM users WHERE users_id='$id'");
+        $result = mysqli_query($this->conn, "SELECT * FROM users WHERE ID='$id'");
         return mysqli_fetch_assoc($result);
     }
 }
