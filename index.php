@@ -1,7 +1,7 @@
 <?php
 //require 'db.php';
 require 'login.class.php';
-if (isset($_SESSION['ID'])){
+if (isset($_SESSION['id'])){
     header("Location:dashboard.php");
 }
 
@@ -13,7 +13,7 @@ if (isset($_POST["submit"])){
 
     if ($result == 1){
         $_SESSION['login']=true;
-        $_SESSION['ID']=$login->idUser();
+        $_SESSION['id']=$login->idUser();
         header("Location:dashboard.php");
     }elseif ($result == 10){
         echo
@@ -42,7 +42,7 @@ if (isset($_POST["submit"])){
 <body>
 <form action="" method="post">
     <h3>Login Here</h3>
-    <div class="text-m"><a href="logout.php" class="flex  text-white items-center hover:text-gray-600"><i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Uitloggen</a></div>
+
 <div class="field input">    
     <label for="username">Email</label>
     <input type="text" name="email" placeholder="Enter email" id="email">
