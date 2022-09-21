@@ -1,16 +1,17 @@
 <?php
-include 'dbcon.php';
 
-$sql = "Update speurtochten set naam='$_GET[naam]' where id='$_GET[sid]'";
+include "dbcon.php";
 
-//$previous = "javascript:history.go(-1)";
-//if(isset($_SERVER['HTTP_REFERER'])) {
-//    $previous = $_SERVER['HTTP_REFERER'];
-//}
+//$sql = "Update speurtochten set naam='$_GET[naam]' where id='$_GET[id]'";
+$sql = "UPDATE speurtochten SET naam='$_GET[name]' WHERE id='$_GET[id]';";
+
+$previous = "javascript:history.go(-1)";
+
 
 
     if (mysqli_query($conn,$sql)){
-        //header("location:dashboard.php");
+        header("location:$previous");
+
     }else{
         echo 'Er is een fout opgetreden';
     }

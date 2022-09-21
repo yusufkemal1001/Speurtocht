@@ -43,26 +43,27 @@ if(isset($_GET['id'])){
                     <div class="w-4/4 rounded-md min-h-60  bg-white  items-center m-auto p-5 mb-5">
                         <div class="max-w-full">
                             <div class="w-5/5 max-h-full">
-                                <div class="text-xl ">
-                                    <form action="" method="get">
-                                        <input type="hidden" name="sid" value="<?= $row["id"]; ?>" />
-                                        <div class="flex p-2 justify-between">
-                                            <b><label>Speurtocht Naam</label></b>&nbsp;&nbsp;
-                                            <input type="text" class="bg-gray-300 rounded-md w-3/6 pl-2" value="<?php echo $row['naam'];?>" name="naam" required /><br>
-                                            <a href="update.speurtocht.php"><i class="fa-regular fa-pen-to-square m-2"></i></a>
-                                            <a href=""><i class="fa-solid fa-trash m-2"></i></a>
-                                        </div>
-                                    </form>
-                                </div>
+<!--                                <div class="text-xl ">-->
+<!--                                    <form action="update.speurtocht.php" method="GET">-->
+<!--                                        <input type="hidden" name="id" value="--><?//= $row["id"]; ?><!--" />-->
+<!--                                        <div class="flex p-2 justify-between">-->
+<!--                                            <b><label>Speurtocht Naam</label></b>&nbsp;&nbsp;-->
+<!--                                            <input type="text" class="bg-gray-300 rounded-md w-3/6 pl-2" value="--><?php //echo $row['naam'];?><!--" name="naam" required /><br>-->
+<!--                                            <a href="update.speurtocht.php"><i class="fa-regular fa-pen-to-square m-2"></i></a>-->
+<!--                                            <a href=""><i class="fa-solid fa-trash m-2"></i></a>-->
+<!--                                        </div>-->
+<!--                                    </form>-->
+<!--                                </div>-->
 
                                 <div class="text-xl ">
-                                    <form action="update.group.php" method="get">
+                                    <form action="update.speurtocht.php" method="get">
                                         <input type="hidden" name="id" value="<?= $row["id"]; ?>" />
                                         <div class="flex p-2 justify-between">
                                             <b><label>Speurtocht Naam</label></b>&nbsp;&nbsp;
                                             <input type="text" class="bg-gray-300 rounded-md w-3/6 pl-2" value="<?php echo $row['naam'];?>" name="name" required /><br>
-                                            <a href=""><i class="fa-regular fa-pen-to-square m-2"></i></a>
-                                            <a href=""><i class="fa-solid fa-trash m-2"></i></a>
+                                            <button><a href="update.speurtocht.php?id=<?php echo $row['id']; ?>"><i class="fa-regular fa-pen-to-square m-2"></i></a></button>
+                                            <a href="delete.speurtocht.php?id=<?php echo $row['id']; ?>"><i class="fa-solid fa-trash m-2"></i></a>
+
                                         </div>
                                     </form>
                                 </div>
