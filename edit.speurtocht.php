@@ -89,12 +89,10 @@ if(isset($_GET['id'])){
                                             <input type="hidden" name="id" value="<?= $row1["id"]; ?>" />
                                             <div class="vraag-counter flex p-2 justify-between items-center">
                                                 <textarea type="text" class="bg-gray-300 rounded-md w-3/6 pl-2" value="<?php echo $row1['vraag'];?>" name="vraag" required rows="2" ><?php echo $row1['vraag'];?></textarea>
-                                                <?php if ($row1['type']=='Tekst'){?>
-                                                    <input type="radio" id="Tekst" name="radio" value="Tekst"  >
-                                                }
-                                                <input type="radio" id="Tekst" name="radio" value="<?php echo $row1['type'];?>" >
+                                                <input type="radio" id="Tekst" name="radio" value="0"<?php if ($row1['type']=='0'){?> checked="true"<?php }?>  >
+
                                                 <label for="Tekst">Tekst</label><br>
-                                                <input type="radio" id="Foto" name="radio" value="<?php echo $row1['type'];?>" >
+                                                <input type="radio" id="Tekst" name="radio" value="1" <?php if ($row1['type']=='1'){?> checked="true"<?php }?> >
                                                 <label for="css">Foto</label><br>
                                                 <button><a href="update.vraag.php?id=<?php echo $row1['id']; ?>"><i class="fa-regular fa-pen-to-square m-2"></i></a></button>
                                                 <a href="delete.question.php?id=<?php echo $row1['id']; ?>&speurtocht_id=<?php echo $row['id']?>"><i class="fa-solid fa-trash m-2"></i></a>
@@ -125,7 +123,8 @@ else{
 
 
 ?>
-                <a href="add.question.php?id=<?php echo $_GET['id']; ?>" class="text-center color-red "><div class="text-center ml-auto mr-auto m-5 mt-20 " style="height: 50px; width: 50%;border-radius: 10px; background-color: lightblue;display: flex;justify-content: center;align-items: center;"><i class="fa-solid fa-plus pr-2"></i>Vraag Aanmaken</div></a>
+                <a href="add.question.php?id=<?php echo $_GET['id']; ?>" class="text-center color-red "><div class="text-center ml-auto mr-auto m-5 mt-10 " style="height: 50px; width: 50%;border-radius: 10px;color: #F0F7F4; background-color: #70ABAF;display: flex;justify-content: center;align-items: center;"><i class="fa-solid fa-plus pr-2"></i>Vraag Aanmaken</div></a>
+                <a href="teams.php?id=<?php echo $_GET['id']; ?>" class="text-center  "><div class="text-center ml-auto mr-auto m-5 mt-10 " style="height: 50px; width: 50%;border-radius: 10px; background-color: lightgreen;display: flex;justify-content: center;align-items: center;"><i class="fa-solid fa-plus pr-2"></i>Groepen Aanmaken</div></a>
                 <a onclick="return confirm('Wilt u deze speurtocht verwijderen?')" href="delete.speurtocht.php?id=<?php echo $_GET['id']; ?>"class="m-auto text-center"><div class="m-auto text-center flex items-center justify-center w-2/4 mt-20" style="height: 50px; border-radius: 10px; background-color: tomato; color: white; "><i class="fa-solid fa-trash m-2"></i>Speurtocht Verwijderen</div></a>
         </body>
 </html>
