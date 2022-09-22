@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 22 sep 2022 om 13:48
+-- Gegenereerd op: 22 sep 2022 om 14:00
 -- Serverversie: 10.4.14-MariaDB
 -- PHP-versie: 7.4.9
 
@@ -112,7 +112,7 @@ CREATE TABLE `vragen` (
   `id` int(11) NOT NULL,
   `speurtocht_id` int(11) NOT NULL,
   `type` int(11) NOT NULL,
-  `vragen` varchar(50) NOT NULL
+  `vraag` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -131,22 +131,22 @@ INSERT INTO `vragen` (`id`, `speurtocht_id`, `type`, `vraag`) VALUES
 --
 ALTER TABLE `antwoorden`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `Team_id` (`team_id`,`vraag_id`),
-  ADD KEY `Vraag_id` (`vraag_id`);
+  ADD KEY `team_id` (`team_id`,`vraag_id`),
+  ADD KEY `vraag_id` (`vraag_id`);
 
 --
 -- Indexen voor tabel `speurtochten`
 --
 ALTER TABLE `speurtochten`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `Gebruiker_id` (`user_id`);
+  ADD KEY `gebruiker_id` (`user_id`);
 
 --
 -- Indexen voor tabel `teams`
 --
 ALTER TABLE `teams`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `Speurtocht_id` (`speurtocht_id`);
+  ADD KEY `speurtocht_id` (`speurtocht_id`);
 
 --
 -- Indexen voor tabel `users`
@@ -159,7 +159,7 @@ ALTER TABLE `users`
 --
 ALTER TABLE `vragen`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `Speurtocht_id` (`speurtocht_id`);
+  ADD KEY `speurtocht_id` (`speurtocht_id`);
 
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
@@ -203,8 +203,10 @@ ALTER TABLE `vragen`
 -- Beperkingen voor tabel `antwoorden`
 --
 ALTER TABLE `antwoorden`
-  ADD CONSTRAINT `antwoorden_ibfk_1` FOREIGN KEY (`Vraag_id`) REFERENCES `vragen` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `antwoorden_ibfk_2` FOREIGN KEY (`Team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `antwoorden_ibfk_1` FOREIGN KEY (`vraag_id`) REFERENCES `vragen` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `antwoorden_ibfk_2` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `antwoorden_ibfk_3` FOREIGN KEY (`vraag_id`) REFERENCES `vragen` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `antwoorden_ibfk_4` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Beperkingen voor tabel `speurtochten`
@@ -216,13 +218,15 @@ ALTER TABLE `speurtochten`
 -- Beperkingen voor tabel `teams`
 --
 ALTER TABLE `teams`
-  ADD CONSTRAINT `teams_ibfk_1` FOREIGN KEY (`Speurtocht_id`) REFERENCES `speurtochten` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `teams_ibfk_1` FOREIGN KEY (`speurtocht_id`) REFERENCES `speurtochten` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `teams_ibfk_2` FOREIGN KEY (`speurtocht_id`) REFERENCES `speurtochten` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Beperkingen voor tabel `vragen`
 --
 ALTER TABLE `vragen`
-  ADD CONSTRAINT `vragen_ibfk_1` FOREIGN KEY (`Speurtocht_id`) REFERENCES `speurtochten` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `vragen_ibfk_1` FOREIGN KEY (`speurtocht_id`) REFERENCES `speurtochten` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `vragen_ibfk_2` FOREIGN KEY (`speurtocht_id`) REFERENCES `speurtochten` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
