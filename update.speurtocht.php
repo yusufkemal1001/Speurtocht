@@ -10,7 +10,7 @@ $previous = "javascript:history.go(-1)";
 
 
     if (mysqli_query($conn,$sql)){
-        header("location:$previous");
+        header("location:edit.speurtocht.php?id=".$_GET['id']);
 
     }else{
         echo 'Er is een fout opgetreden';
