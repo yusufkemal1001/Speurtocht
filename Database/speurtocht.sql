@@ -119,7 +119,7 @@ CREATE TABLE `vragen` (
 -- Gegevens worden geëxporteerd voor tabel `vragen`
 --
 
-INSERT INTO `vragen` (`id`, `speurtocht_id`, `type`, `vragen`) VALUES
+INSERT INTO `vragen` (`id`, `speurtocht_id`, `type`, `vraag`) VALUES
 (1, 1, 1, 'Maak een foto bij de info balie');
 
 --
