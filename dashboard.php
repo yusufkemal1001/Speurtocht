@@ -23,10 +23,10 @@ if (isset($_SESSION["id"])){
     <script src="https://kit.fontawesome.com/a5e31d35c1.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
-<body class="w-3/5 m-auto">
+<body class="w-3/5 m-auto" style="background-color: #161215;">
 <div class="">
-<div class="text-4xl text-center">Welkom <?php echo $user['name'];?></div>
-<div class="text-m"><a href="logout.php" class="flex float-right items-center hover:text-gray-600"><i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Uitloggen</a></div>
+<div class="text-4xl text-white m-5 text-center">Welkom <?php echo $user['name'];?></div>
+<div class="text-m text-white"><a href="logout.php" class="flex float-right items-center hover:text-gray-600"><i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Uitloggen</a></div>
 </div>
 <div class="grid grid-cols-2">
     <?php include "show.speurtocht.php";?>
