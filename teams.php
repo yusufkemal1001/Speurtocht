@@ -38,75 +38,77 @@ while($row = mysqli_fetch_array($query_fetch)){ ?>
         <div class=" rounded-md" style="min-height: 400px;">
             <div class=" flex items-center mb-5  " style="color: #F0F7F4">
                 <a href="dashboard.php" class="w-1/5 item-center"><i class="m-2 fa-solid fa-arrow-left"></i>Terug naar dashboard</a>
-                <div class="float-right justify-center text-center text-4xl w-3/5 mr-1/5"><?php echo $row['naam'];?></div>
-
-
+                <div class="float-right justify-center text-center text-4xl w-3/5 mr-1/5">Groepen</div>
             </div>
+            <script>
+                let formCount = 2;
+                function addTeamForm(){
+                    const form = document.querySelector("#teamForm")
+                    const div = document.createElement("div")
+                    div.className = "formclass w-full overflow-scroll max-h-screen"
+                    div.innerHTML = `
+                    <div class="w-4/4 rounded-md min-h-60    items-center m-auto p-5 mb-5" style="background-color: #7CB3B6;">
+                    <div class="max-w-full">
+                        <div class="w-5/5 max-h-full">
+                            <div class="text-xl ">
+                                <div class="vraag-counter  p-2 justify-between items-center">
+                                    <input type="hidden" value="">
+                                    <div class="flex justify-between items-center">
+                                        <div class="w-1/5 m-auto"><b>Groep naam</b></div>
+                                        <input type="text" class="bg-white rounded-md w-4/5 m-2 p-2 team-counter" value="Groep ${formCount}" name="group"  >
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <div class="m-auto w-1/5"><b>E-mail</b></div>
+                                        <input type="text" class="bg-white rounded-md w-4/5 m-2 p-2" value="sup" name="email"  >
+                                    </div>
+                                </div>
 
-            <div class="w-full overflow-scroll max-h-screen ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    `
+                    formCount++;
+                    form.appendChild(div)
+                }
+            </script>
+            <form action="update.vraag.php" method="get" id="teamForm">
+            <div class="formclass w-full overflow-scroll max-h-screen ">
                 <div class="w-4/4 rounded-md min-h-60    items-center m-auto p-5 mb-5" style="background-color: #7CB3B6;">
                     <div class="max-w-full">
                         <div class="w-5/5 max-h-full">
                             <div class="text-xl ">
-                                <form action="update.speurtocht.php" method="get">
-                                    <input type="hidden" name="id" value="<?= $row["id"]; ?>" />
-                                    <div class="flex p-2 justify-between">
-                                        <b><label>Speurtocht Naam</label></b>&nbsp;&nbsp;
-                                        <input type="text" class=" rounded-md w-3/5 pl-2" style="background-color: #1D3334;color: white;" value="<?php echo $row['naam'];?>" name="name" required /><br>
-                                        <button><a href="update.speurtocht.php?id=<?php echo $row['id']; ?>"><i class="fa-regular fa-pen-to-square m-2"></i></a></button>
-
+                                <div class="vraag-counter  p-2 justify-between items-center">
+                                    <input type="hidden" value="">
+                                    <div class="flex justify-between items-center">
+                                        <div class="w-1/5 m-auto"><b>Groep naam</b></div>
+                                        <input type="text" class="bg-white rounded-md w-4/5 m-2 p-2 team-counter" value="Groep 1" name="group"  >
                                     </div>
-                                </form>
+                                    <div class="flex justify-between items-center">
+                                        <div class="m-auto w-1/5"><b>E-mail</b></div>
+                                        <input type="text" class="bg-white rounded-md w-4/5 m-2 p-2" value="sup" name="email"  >
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <?php
-            if (mysqli_num_rows($query_fetch1)!= 0){ ?>
-                <div class="text-2xl text-center mt-10" style="color: #F0F7F4">
-                    Vragen
-                </div>
-                <?php
-            }
+            </form>
 
-            while ($row1 = mysqli_fetch_array($query_fetch1)){?>
                 <style>
                     body {
                         /* Set "my-sec-counter" to 0 */
                         counter-reset: my-sec-counter;
                     }
 
-                    .vraag-counter::before {
+                    .team-counter::before {
                         /* Increment "my-sec-counter" by 1 */
                         counter-increment: my-sec-counter;
                         content: "Vraag " counter(my-sec-counter) ".";
                     }
                 </style>
-                <div class="w-full overflow-scroll max-h-screen ">
-                    <div class="w-4/4 rounded-md min-h-60    items-center m-auto p-2 mb-5"style="background-color: #D6F094;">
-                        <div class="max-w-full">
-                            <div class="w-5/5 max-h-full">
-                                <div class="text-xl ">
-                                    <form action="update.vraag.php" method="get">
-                                        <input type="hidden" name="speurtocht_id" value="<?= $row["id"]; ?>" />
-                                        <input type="hidden" name="id" value="<?= $row1["id"]; ?>" />
-                                        <div class="vraag-counter flex p-2 justify-between items-center">
-                                            <textarea type="text" class="bg-white rounded-md w-3/6 pl-2" value="<?php echo $row1['vraag'];?>" name="vraag" required rows="2" ><?php echo $row1['vraag'];?></textarea>
-                                            <input type="radio" id="Tekst" name="radio" value="0"<?php if ($row1['type']=='0'){?> checked="true"<?php }?>  >
-
-                                            <label for="Tekst">Tekst</label><br>
-                                            <input type="radio" id="Tekst" name="radio" value="1" <?php if ($row1['type']=='1'){?> checked="true"<?php }?> >
-                                            <label for="css">Foto</label><br>
-                                            <button><a href="update.vraag.php?id=<?php echo $row1['id']; ?>"><i class="fa-regular fa-pen-to-square m-2"></i></a></button>
-                                            <a href="delete.question.php?id=<?php echo $row1['id']; ?>&speurtocht_id=<?php echo $row['id']?>"><i class="fa-solid fa-trash m-2"></i></a>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
 
 
@@ -116,7 +118,7 @@ while($row = mysqli_fetch_array($query_fetch)){ ?>
 
                 <?php
             } // while loop brace
-            }
+
 
             } // isset brace
 
@@ -127,7 +129,7 @@ while($row = mysqli_fetch_array($query_fetch)){ ?>
 
 
             ?>
-            <a href="add.question.php?id=<?php echo $_GET['id']; ?>" class="text-center color-red "><div class="text-center ml-auto mr-auto m-5 mt-10 " style="height: 50px; width: 50%;border-radius: 10px;color: #F0F7F4; background-color: #70ABAF;display: flex;justify-content: center;align-items: center;"><i class="fa-solid fa-plus pr-2"></i>Vraag Aanmaken</div></a>
+            <a  onclick="addTeamForm()" class="text-center color-red "><div class="text-center ml-auto mr-auto m-5 mt-10 " style="height: 50px; width: 50%;border-radius: 10px;color: #F0F7F4; background-color: #70ABAF;display: flex;justify-content: center;align-items: center;"><i class="fa-solid fa-plus pr-2"></i>Vraag Aanmaken</div></a>
             <a href="teams.php?id=<?php echo $_GET['id']; ?>" class="text-center  "><div class="text-center ml-auto mr-auto m-5 mt-10 " style="height: 50px; width: 50%;border-radius: 10px; background-color: #78A300;color:white; display: flex;justify-content: center;align-items: center;">Groepen Aanmaken<i class="fa-solid fa-arrow-right m-2"></i></div></a>
             <a onclick="return confirm('Wilt u deze speurtocht verwijderen?')" href="delete.speurtocht.php?id=<?php echo $_GET['id']; ?>"class="m-auto text-center"><div class="m-auto text-center flex items-center justify-center w-2/4 mt-20" style="height: 50px; border-radius: 10px; background-color: tomato; color: white; ">Speurtocht Verwijderen<i class="fa-solid fa-arrow-right m-2"></i></div></a>
 </body>

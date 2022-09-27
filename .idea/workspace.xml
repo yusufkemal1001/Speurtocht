@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fb04de34-e862-43cd-949c-afd38253c617" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teams.php" beforeDir="false" afterPath="$PROJECT_DIR$/teams.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663155348403</updated>
       <workItem from="1663155350695" duration="40379000" />
-      <workItem from="1663846981976" duration="13730000" />
+      <workItem from="1663846981976" duration="20172000" />
     </task>
     <servers />
   </component>
