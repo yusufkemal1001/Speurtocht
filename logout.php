@@ -1,5 +1,4 @@
 <?php
-//require 'db.php';
 require 'login.class.php';
 $_SESSION = [];
 session_unset();

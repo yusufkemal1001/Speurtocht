@@ -1,5 +1,4 @@
 <?php
-//require 'db.php';
 require 'login.class.php';
 if (isset($_SESSION['user_id'])){
     header("Location:dashboard.php");
