@@ -77,7 +77,7 @@ while($row = mysqli_fetch_array($query_fetch)){ ?>
                 }
             </script>
             <form action="update.vraag.php" method="get" id="teamForm">
-            <div class="formclass w-full overflow-scroll max-h-screen ">
+            <div class="formclass w-full  max-h-screen ">
                 <div class="w-4/4 rounded-md min-h-60    items-center m-auto p-5 mb-5" style="background-color: #7CB3B6;">
                     <div class="max-w-full">
                         <div class="w-5/5 max-h-full">

@@ -37,13 +37,13 @@ if(isset($_GET['id'])){
         <div class="m-auto w-3/5 p-5 rounded-md max-h-screen " >
             <div class=" rounded-md" style="min-height: 400px;">
                 <div class=" flex items-center mb-5  " style="color: #F0F7F4">
-                    <a href="dashboard.php" class="w-1/5 item-center"><i class="m-2 fa-solid fa-arrow-left"></i>Terug naar dashboard</a>
+                    <a href="dashboard.php" class="w-2/5 item-center"><i class="m-2 fa-solid fa-arrow-left"></i>Terug naar dashboard</a>
                     <div class="float-right justify-center text-center text-4xl w-3/5 mr-1/5">Speurtocht <?php echo $row['naam'];?></div>
 
 
                 </div>
 
-                <div class="w-full overflow-scroll max-h-screen ">
+                <div class="w-full  max-h-screen ">
                     <div class="w-4/4 rounded-md min-h-60    items-center m-auto p-5 mb-5" style="background-color: #7CB3B6;">
                         <div class="max-w-full">
                             <div class="w-5/5 max-h-full">
@@ -83,7 +83,7 @@ if(isset($_GET['id'])){
                             content: "Vraag " counter(my-sec-counter) ".";
                         }
                     </style>
-                    <div class="w-full overflow-scroll max-h-screen ">
+                    <div class="w-full  max-h-screen ">
                         <div class="w-4/4 rounded-md min-h-60    items-center m-auto p-2 mb-5"style="background-color: #D6F094;">
                             <div class="max-w-full">
                                 <div class="w-5/5 max-h-full">

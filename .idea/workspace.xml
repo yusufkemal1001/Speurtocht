@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dbcon.php" beforeDir="false" afterPath="$PROJECT_DIR$/dbcon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit.speurtocht.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit.speurtocht.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teams.php" beforeDir="false" afterPath="$PROJECT_DIR$/teams.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +51,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663155348403</updated>
       <workItem from="1663155350695" duration="40379000" />
-      <workItem from="1663846981976" duration="21873000" />
+      <workItem from="1663846981976" duration="22031000" />
     </task>
     <servers />
   </component>
