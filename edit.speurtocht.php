@@ -28,7 +28,7 @@ if(isset($_GET['id'])){
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <script src="https://kit.fontawesome.com/a5e31d35c1.js" crossorigin="anonymous"></script>
             <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-            <link href="/dist/output.css" rel="stylesheet">
+            <link href="dist/output.css" rel="stylesheet">
             <title>Document</title>
         </head>
         <body style="background-color: #161215;">
