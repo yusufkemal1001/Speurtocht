@@ -37,7 +37,7 @@ while($row = mysqli_fetch_array($query_fetch)){ ?>
     <div class="m-auto w-3/5 p-5 rounded-md max-h-screen " >
         <div class=" rounded-md" style="min-height: 400px;">
             <div class=" flex items-center mb-5  " style="color: #F0F7F4">
-                <a href="edit.speurtocht.php?id=<?php echo $row['id']; ?>" class="w-1/5 item-center"><i class="m-2 fa-solid fa-arrow-left"></i>Terug naar dashboard</a>
+                <a href="edit.speurtocht.php?id=<?php echo $row['id']; ?>" class="w-2/5 item-center"><i class="m-2 fa-solid fa-arrow-left"></i>Terug naar dashboard</a>
                 <div class="float-right justify-center text-center text-4xl w-3/5 mr-1/5">Groepen</div>
             </div>
             <script>
@@ -56,12 +56,12 @@ while($row = mysqli_fetch_array($query_fetch)){ ?>
                                 <div class="vraag-counter  p-2 justify-between items-center">
                                     <input type="hidden" value="">
                                     <div class="flex justify-between items-center">
-                                        <div class="w-1/5 m-auto"><b>Groep naam</b></div>
-                                        <input type="text" class="bg-white rounded-md w-4/5 m-2 p-2 team-counter" value="Groep ${formCount}" name="group"  required>
+                                        <div class="w-1/5 m-auto text-center"><b>Groep naam</b></div>
+                                        <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2 " value="Groep ${formCount}" name="group"  required>
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <div class="m-auto w-1/5"><b>E-mail</b></div>
-                                        <input type="text" class="bg-white rounded-md w-4/5 m-2 p-2" value="" name="email" required >
+                                        <div class="m-auto text-center w-1/5"><b>E-mail</b></div>
+                                        <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2" value="" name="email" required >
                                     </div>
                                 </div>
 
@@ -85,12 +85,12 @@ while($row = mysqli_fetch_array($query_fetch)){ ?>
                                 <div class="vraag-counter  p-2 justify-between items-center">
                                     <input type="hidden" value="">
                                     <div class="flex justify-between items-center">
-                                        <div class="w-1/5 m-auto"><b>Groep naam</b></div>
-                                        <input type="text" class="bg-white rounded-md w-4/5 m-2 p-2 team-counter" value="Groep 1" name="group"  required>
+                                        <div class="w-1/5 m-auto text-center"><b>Groep naam</b></div>
+                                        <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2 team-counter" value="Groep 1" name="group"  required>
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <div class="m-auto w-1/5"><b>E-mail</b></div>
-                                        <input type="text" class="bg-white rounded-md w-4/5 m-2 p-2" value="" name="email" required >
+                                        <div class="m-auto w-1/5 text-center"><b>E-mail</b></div>
+                                        <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2" value="" name="email" required >
                                     </div>
                                 </div>
 
