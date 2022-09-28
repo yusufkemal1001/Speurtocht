@@ -5,7 +5,7 @@ if (isset($_SESSION['id'])){
     header("Location:dashboard.php");
 }
 
-$login = new login();
+    $login = new login();
 
 
 if (isset($_POST["submit"])){

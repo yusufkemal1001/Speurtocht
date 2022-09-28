@@ -2,8 +2,6 @@
 include 'dbcon.php';
 require 'login.class.php';
 
-//require 'db.php';
-
 $select = new Select();
 
 if (isset($_SESSION["id"])){
@@ -142,4 +140,3 @@ while($row = mysqli_fetch_array($query_fetch)){
 
 </body>
 </html>
-

@@ -11,5 +11,3 @@ if (mysqli_query($conn,$sql)){
     echo 'Er is een fout opgetreden';
 }
 $result = $conn->query($sql);
-
-

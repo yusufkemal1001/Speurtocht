@@ -9,7 +9,6 @@ if (isset($_SESSION['id'])){
     header("location: index.php");
 }
 
-
 $sql = "insert into vragen(vraag,speurtocht_id,type)values('Nieuw Vraag','$_GET[id]',0);";
 $previous = "javascript:history.go(-1)";
 if (mysqli_query($conn,$sql)){
@@ -19,7 +18,4 @@ if (mysqli_query($conn,$sql)){
 }else{
     echo 'Er is een fout opgetreden';
 }
-
-
 ?>
-

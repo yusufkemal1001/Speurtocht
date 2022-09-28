@@ -1,3 +1,8 @@
+<?php 
+include 'dbcon.php';
+$query_fetch = mysqli_query($conn,"SELECT * FROM antwoorden WHERE behaald = 0");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +12,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>Goed/Afkeuren</title>
 </head>
-<a href="index.html" class="back-button">←</a>
+<a href="index.php" class="back-button">←</a>
 <body style=" margin-top:100px">
     <div class="tbg">
         <div class="theader">
@@ -26,13 +31,16 @@
           
           </div>
           <div class="tcontrols">
-            <div class="tno" aria-hidden="true"></div>
-            <div class="tyes" aria-hidden="true"></div>
+            <div class="tno" aria-hidden="true">
+              <button type="button">Foute shit</button>
+            </div>
+            <div class="tyes" aria-hidden="true">
+              <button type="button">goed spul
+              </button>
+            </div>
           </div>
         </div>
       
       </div>  
 </body>
 </html>
-
-
