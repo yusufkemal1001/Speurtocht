@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fb04de34-e862-43cd-949c-afd38253c617" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add.question.php" beforeDir="false" afterPath="$PROJECT_DIR$/add.question.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dbcon.php" beforeDir="false" afterPath="$PROJECT_DIR$/dbcon.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit.speurtocht.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit.speurtocht.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mail1.php" beforeDir="false" afterPath="$PROJECT_DIR$/mail1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teams.php" beforeDir="false" afterPath="$PROJECT_DIR$/teams.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +19,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="2El1RJcK2gAEqCDmjh4wzUzpKcb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -52,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663155348403</updated>
       <workItem from="1663155350695" duration="40379000" />
-      <workItem from="1663846981976" duration="35765000" />
+      <workItem from="1663846981976" duration="37546000" />
     </task>
     <servers />
   </component>

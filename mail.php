@@ -1,10 +1,18 @@
 <?php
     error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
     ini_set('display_errors', 1);
-    require "classes/PHPMailer-master/src/PHPMailer.php";
 
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+
+
+require 'vendor/autoload.php';
+
+    require 'vendor/phpmailer/phpmailer/src/Exception.php';
+    require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+    require 'vendor/phpmailer/phpmailer/src/SMTP.php';
     //Receiver Info
-     $email = "232710@edu.rocfriesepoort.nl";
+     $email = "yusufkemal@live.com";
      $name = "Gebruiker";
 
     //Sender Info

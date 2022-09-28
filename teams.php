@@ -156,7 +156,8 @@ while($row = mysqli_fetch_array($query_fetch)){ ?>
                 </div>
                 </div>
                 <a  onclick="addTeamForm()" class="text-center color-red "><div class="text-center ml-auto mr-auto m-5 mt-10 " style="height: 50px; width: 50%;border-radius: 10px;color: #F0F7F4; background-color: #70ABAF;display: flex;justify-content: center;align-items: center;"><i class="fa-solid fa-plus pr-2"></i>Groep Aanmaken</div></a>
-                <button class="m-auto item-center" style="height: 50px; width: 50%;border-radius: 10px; background-color: #78A300;color:white; display: flex;justify-content: center;align-items: center;"><a href="add.team.php?id=<?php echo $_GET['id']; ?>" class="text-center"><div class="text-center ml-auto mr-auto m-5 " >E-mails versturen<i class="fa-solid fa-arrow-right m-2"></i></div></a></button>
+<!--                <button class="m-auto item-center" style="height: 50px; width: 50%;border-radius: 10px; background-color: #78A300;color:white; display: flex;justify-content: center;align-items: center;"><a href="add.team.php?id=--><?php //echo $_GET['id']; ?><!--" class="text-center"><div class="text-center ml-auto mr-auto m-5 " >E-mails versturen<i class="fa-solid fa-arrow-right m-2"></i></div></a></button>-->
+                <button class="m-auto item-center" style="height: 50px; width: 50%;border-radius: 10px; background-color: #78A300;color:white; display: flex;justify-content: center;align-items: center;"><a href="mail.php" class="text-center"><div class="text-center ml-auto mr-auto m-5 " >test mail.php<i class="fa-solid fa-arrow-right m-2"></i></div></a></button>
             </form>
 
                 <style>
