@@ -18,7 +18,14 @@ $id = (int)$_GET['id'];
 
 $query_fetch = mysqli_query($conn,"SELECT * FROM speurtochten WHERE id = $id");
 $query_fetch1 = mysqli_query($conn,"SELECT * FROM vragen WHERE speurtocht_id = $id");
-while($row = mysqli_fetch_array($query_fetch)){ ?>
+while($row = mysqli_fetch_array($query_fetch)){  
+}
+
+// Mail funcite
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -47,7 +54,7 @@ while($row = mysqli_fetch_array($query_fetch)){ ?>
                     const div = document.createElement("div")
 
                     div.innerHTML = `
-            <form action="update.vraag.php" method="get" id="teamForm">
+            <form action="" method="get" id="teamForm">
             <div class="formclass w-full x   max-h-screen ">
                 <div class="w-4/4 rounded-md min-h-60    items-center m-auto p-5 mb-5" style="background-color: #7CB3B6;">
                     <div class="max-w-full">
@@ -124,17 +131,14 @@ while($row = mysqli_fetch_array($query_fetch)){ ?>
             } // while loop brace
 
 
-            } // isset brace
+             // isset brace
 
-            else{
-                echo "It is not set.";
-            }
-
-
-
+            // else{
+            //     echo "It is not set.";
+            // }
             ?>
             <a  onclick="addTeamForm()" class="text-center color-red "><div class="text-center ml-auto mr-auto m-5 mt-10 " style="height: 50px; width: 50%;border-radius: 10px;color: #F0F7F4; background-color: #70ABAF;display: flex;justify-content: center;align-items: center;"><i class="fa-solid fa-plus pr-2"></i>Groep Aanmaken</div></a>
-            <a href="teams.php?id=<?php echo $_GET['id']; ?>" class="text-center  "><div class="text-center ml-auto mr-auto m-5 mt-10 " style="height: 50px; width: 50%;border-radius: 10px; background-color: #78A300;color:white; display: flex;justify-content: center;align-items: center;">E-mails versturen<i class="fa-solid fa-arrow-right m-2"></i></div></a>
+            <button class="m-auto item-center" name="send" style="height: 50px; width: 50%;border-radius: 10px; background-color: #78A300;color:white; display: flex;justify-content: center;align-items: center;"><a href="teams.php?id=<?php echo $_GET['id']; ?>" class="text-center"><div class="text-center ml-auto mr-auto m-5 " >E-mails versturen<i class="fa-solid fa-arrow-right m-2"></i></div></a></button>
 
 </body>
 </html>
