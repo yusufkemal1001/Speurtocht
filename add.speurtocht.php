@@ -19,7 +19,5 @@ if (mysqli_query($conn,$sql)){
 }else{
     echo 'Er is een fout opgetreden';
 }
-
-
 ?>
 

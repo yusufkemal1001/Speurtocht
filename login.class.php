@@ -4,7 +4,6 @@ class login extends Dbh{
     public $id;
     public function login($email,$password){
         $stmt = mysqli_prepare($this->conn, "Select * FROM users WHERE email = ? ;");
-//        $result = mysqli_query($this->conn, "Select * FROM users WHERE username = '$username';");
         $stmt->bind_param('s',$email);
         $stmt->execute();
         $result = $stmt->get_result();

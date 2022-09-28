@@ -133,4 +133,3 @@ else{
                 <a onclick="return confirm('Wilt u deze speurtocht verwijderen?')" href="delete.speurtocht.php?id=<?php echo $_GET['id']; ?>"class="m-auto text-center"><div class="m-auto text-center flex items-center justify-center w-2/4 mt-20" style="height: 50px; border-radius: 10px; background-color: tomato; color: white; ">Speurtocht Verwijderen<i class="fa-solid fa-arrow-right m-2"></i></div></a>
         </body>
 </html>
-
