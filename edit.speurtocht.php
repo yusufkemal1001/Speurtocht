@@ -36,9 +36,10 @@ if(isset($_GET['id'])){
 
         <div class="m-auto w-3/5 p-5 rounded-md max-h-screen " >
             <div class=" rounded-md" style="min-height: 400px;">
+                <div>
                 <div class=" flex items-center mb-5  " style="color: #F0F7F4">
-                    <a href="dashboard.php" class="w-2/5 item-center"><i class="m-2 fa-solid fa-arrow-left"></i>Terug naar dashboard</a>
-                    <div class="float-right justify-center text-center text-4xl w-3/5 mr-1/5">Speurtocht <?php echo $row['naam'];?></div>
+                    <a href="dashboard.php" class="w-2/5 item-center"><i class="m-2 fa-solid fa-arrow-left"></i>Terug</a>
+                    <div class="m-auto justify-center text-center text-4xl w-3/5 mr-1/5">Speurtocht <?php echo $row['naam'];?></div>
 
 
                 </div>
@@ -84,7 +85,7 @@ if(isset($_GET['id'])){
                         }
                     </style>
                     <div class="w-full  max-h-screen ">
-                        <div class="w-4/4 rounded-md min-h-60    items-center m-auto p-2 mb-5"style="background-color: #D6F094;">
+                        <div class="w-4/4 rounded-md min-h-60    items-center m-auto p-2 mb-5"style="background-color: #D0F1ED;">
                             <div class="max-w-full">
                                 <div class="w-5/5 max-h-full">
                                     <div class="text-xl ">
@@ -127,7 +128,7 @@ else{
 
 
 ?>
-                <a href="add.question.php?id=<?php echo $_GET['id']; ?>" class="text-center color-red "><div class="text-center ml-auto mr-auto m-5 mt-10 " style="height: 50px; width: 50%;border-radius: 10px;color: #F0F7F4; background-color: #70ABAF;display: flex;justify-content: center;align-items: center;"><i class="fa-solid fa-plus pr-2"></i>Vraag Aanmaken</div></a>
+                <a href="add.question.php?id=<?php echo $_GET['id']; ?>" class="text-center color-red "><div class="text-center ml-auto mr-auto m-5 mt-10 " style="height: 50px; width: 50%;border-radius: 10px; background-color: #D6F094;display: flex;justify-content: center;align-items: center;"><i class="fa-solid fa-plus pr-2"></i>Vraag Aanmaken</div></a>
                 <a href="teams.php?id=<?php echo $_GET['id']; ?>" class="text-center  "><div class="text-center ml-auto mr-auto m-5 mt-10 " style="height: 50px; width: 50%;border-radius: 10px; background-color: #78A300;color:white; display: flex;justify-content: center;align-items: center;">Groepen Aanmaken<i class="fa-solid fa-arrow-right m-2"></i></div></a>
                 <a onclick="return confirm('Wilt u deze speurtocht verwijderen?')" href="delete.speurtocht.php?id=<?php echo $_GET['id']; ?>"class="m-auto text-center"><div class="m-auto text-center flex items-center justify-center w-2/4 mt-20" style="height: 50px; border-radius: 10px; background-color: tomato; color: white; ">Speurtocht Verwijderen<i class="fa-solid fa-arrow-right m-2"></i></div></a>
         </body>
