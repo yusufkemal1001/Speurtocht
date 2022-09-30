@@ -2,6 +2,8 @@
 include 'dbcon.php';
 require 'login.class.php';
 
+//require 'db.php';
+
 $select = new Select();
 
 if (isset($_SESSION["id"])){
@@ -16,14 +18,7 @@ $id = (int)$_GET['id'];
 
 $query_fetch = mysqli_query($conn,"SELECT * FROM speurtochten WHERE id = $id");
 $query_fetch1 = mysqli_query($conn,"SELECT * FROM vragen WHERE speurtocht_id = $id");
-while($row = mysqli_fetch_array($query_fetch)){  
-}
-
-// Mail funcite
-
-?>
-
-
+while($row = mysqli_fetch_array($query_fetch)){ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -42,19 +37,22 @@ while($row = mysqli_fetch_array($query_fetch)){
     <div class="m-auto w-3/5 p-5 rounded-md max-h-screen " >
         <div class=" rounded-md" style="min-height: 400px;">
             <div class=" flex items-center mb-5  " style="color: #F0F7F4">
-                <a href="edit.speurtocht.php?id=<?php echo $row['id']; ?>" class="w-2/5 item-center"><i class="m-2 fa-solid fa-arrow-left"></i>Terug naar dashboard</a>
-                <div class="float-right justify-center text-center text-4xl w-3/5 mr-1/5">Groepen</div>
+                <a href="edit.speurtocht.php?id=<?php echo $row['id']; ?>" class="w-2/5 item-center"><i class="m-2 fa-solid fa-arrow-left"></i>Terug</a>
+                <div class="m-auto justify-center text-center text-4xl w-3/5 mr-1/5">Groepen</div>
             </div>
             <script>
                 let formCount = 2;
                 function addTeamForm(){
                     const form = document.querySelector("#teamForm")
                     const div = document.createElement("div")
-
+                    const formCountClone = formCount
+                    div.id = "form-count-" + formCountClone
+                    console.log(formCount)
                     div.innerHTML = `
-            <form action="" method="get" id="teamForm">
-            <div class="formclass w-full x   max-h-screen ">
+
+
                 <div class="w-4/4 rounded-md min-h-60    items-center m-auto p-5 mb-5" style="background-color: #7CB3B6;">
+<div class="flex items-center" style="font-size: 12px; justify-content: end;"><a onclick="deleteTeamForm(${formCountClone})"><b>Groep verwijderen</b><i class=" p-2 fa-solid fa-trash"></i></a></div>
                     <div class="max-w-full">
                         <div class="w-5/5 max-h-full">
                             <div class="text-xl ">
@@ -62,11 +60,11 @@ while($row = mysqli_fetch_array($query_fetch)){
                                     <input type="hidden" value="">
                                     <div class="flex justify-between items-center">
                                         <div class="w-1/5 m-auto text-center"><b>Groep naam</b></div>
-                                        <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2 " value="Groep ${formCount}" name="group"  required>
+                                        <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2 " value="Groep ${formCount}" name="groups[${formCount}][group]"  required>
                                     </div>
                                     <div class="flex justify-between items-center">
                                         <div class="m-auto text-center w-1/5"><b>E-mail</b></div>
-                                        <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2" value="" name="email" required >
+                                        <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2" value="" name="groups[${formCount}][email]" required >
                                     </div>
                                 </div>
 
@@ -74,28 +72,79 @@ while($row = mysqli_fetch_array($query_fetch)){
                         </div>
                     </div>
                 </div>
-            </div>
-            </form>
+
+
                     `
                     formCount++;
                     form.appendChild(div)
+
+                }
+                function deleteTeamForm(formCount1){
+
+
+
+                    const div = document.getElementById("form-count-" + formCount1)
+                    // const formCountClone = formCount -1
+                    // console.log("form-count-"+formCount1)
+                    div.parentNode.removeChild(div)
+
+                    console.log(formCount)
+                    // ;[...form.childNodes.values()].find(n => n.c)
+                    //const div = document.createElement("div")
+                    // form.removeChild()
+//                    div.innerHTML = `
+//             <form action="update.vraag.php" method="get" id="teamForm">
+//             <div class="formclass w-full x   max-h-screen ">
+//                 <div class="w-4/4 rounded-md min-h-60    items-center m-auto p-5 mb-5" style="background-color: #7CB3B6;">
+// <div class="flex items-center" style="font-size: 12px; justify-content: end;"><a onclick="deleteTeamForm()"><b>Groep verwijderen</b><i class=" p-2 fa-solid fa-trash"></i></a></div>
+//                     <div class="max-w-full">
+//                         <div class="w-5/5 max-h-full">
+//                             <div class="text-xl ">
+//                                 <div class="vraag-counter  p-2 justify-between items-center">
+//                                     <input type="hidden" value="">
+//                                     <div class="flex justify-between items-center">
+//                                         <div class="w-1/5 m-auto text-center"><b>Groep naam</b></div>
+//                                         <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2 " value="Groep ${formCount}" name="group"  required>
+//                                     </div>
+//                                     <div class="flex justify-between items-center">
+//                                         <div class="m-auto text-center w-1/5"><b>E-mail</b></div>
+//                                         <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2" value="" name="email" required >
+//                                     </div>
+//                                 </div>
+//
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//             </form>
+//                     `
+
                 }
             </script>
-            <form action="update.vraag.php" method="get" id="teamForm">
+
+            <form action="add.team.php?id=<?php echo $_GET['id'] ?>" method="post"  >
+                <div class="inputs-container" id="teamForm">
+                <div id="form-count-1">
             <div class="formclass w-full  max-h-screen ">
-                <div class="w-4/4 rounded-md min-h-60    items-center m-auto p-5 mb-5" style="background-color: #7CB3B6;">
+
+                <div class="w-4/4 rounded-md min-h-60  m  items-center m-auto p-5 mb-5" style="background-color: #7CB3B6;">
+
                     <div class="max-w-full">
                         <div class="w-5/5 max-h-full">
                             <div class="text-xl ">
+
                                 <div class="vraag-counter  p-2 justify-between items-center">
+
                                     <input type="hidden" value="">
                                     <div class="flex justify-between items-center">
                                         <div class="w-1/5 m-auto text-center"><b>Groep naam</b></div>
-                                        <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2 team-counter" value="Groep 1" name="group"  required>
+                                        <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2 team-counter" value="Groep 1" name="groups[0][group]"  required>
+
                                     </div>
                                     <div class="flex justify-between items-center">
                                         <div class="m-auto w-1/5 text-center"><b>E-mail</b></div>
-                                        <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2" value="" name="email" required >
+                                        <input type="text" class="bg-white rounded-md w-3/4 m-2 p-2" value="" name="groups[0][email]" required >
                                     </div>
                                 </div>
 
@@ -104,6 +153,11 @@ while($row = mysqli_fetch_array($query_fetch)){
                     </div>
                 </div>
             </div>
+                </div>
+                </div>
+                <a  onclick="addTeamForm()" class="text-center color-red "><div class="text-center ml-auto mr-auto m-5 mt-10 " style="height: 50px; width: 50%;border-radius: 10px;color: #F0F7F4; background-color: #70ABAF;display: flex;justify-content: center;align-items: center;"><i class="fa-solid fa-plus pr-2"></i>Groep Aanmaken</div></a>
+<!--                <button class="m-auto item-center" style="height: 50px; width: 50%;border-radius: 10px; background-color: #78A300;color:white; display: flex;justify-content: center;align-items: center;"><a href="add.team.php?id=--><?php //echo $_GET['id']; ?><!--" class="text-center"><div class="text-center ml-auto mr-auto m-5 " >E-mails versturen<i class="fa-solid fa-arrow-right m-2"></i></div></a></button>-->
+                <button class="m-auto item-center" style="height: 50px; width: 50%;border-radius: 10px; background-color: #78A300;color:white; display: flex;justify-content: center;align-items: center;"><a href="mail.php" class="text-center"><div class="text-center ml-auto mr-auto m-5 " >test mail.php<i class="fa-solid fa-arrow-right m-2"></i></div></a></button>
             </form>
 
                 <style>
@@ -129,14 +183,17 @@ while($row = mysqli_fetch_array($query_fetch)){
             } // while loop brace
 
 
-             // isset brace
+            } // isset brace
 
-            // else{
-            //     echo "It is not set.";
-            // }
+            else{
+                echo "It is not set.";
+            }
+
+
+
             ?>
-            <a  onclick="addTeamForm()" class="text-center color-red "><div class="text-center ml-auto mr-auto m-5 mt-10 " style="height: 50px; width: 50%;border-radius: 10px;color: #F0F7F4; background-color: #70ABAF;display: flex;justify-content: center;align-items: center;"><i class="fa-solid fa-plus pr-2"></i>Groep Aanmaken</div></a>
-            <button class="m-auto item-center" name="send" style="height: 50px; width: 50%;border-radius: 10px; background-color: #78A300;color:white; display: flex;justify-content: center;align-items: center;"><a href="teams.php?id=<?php echo $_GET['id']; ?>" class="text-center"><div class="text-center ml-auto mr-auto m-5 " >E-mails versturen<i class="fa-solid fa-arrow-right m-2"></i></div></a></button>
+
 
 </body>
 </html>
+

@@ -1,10 +1,16 @@
 <?php
-    error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
-    ini_set('display_errors', 1);
-    include "classes/class.phpmailer.php";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
+//Create an instance; passing true enables exceptions
+$mail = new PHPMailer(true);
 
     //Receiver Info
-     $email = "larsderover@hotmail.com";
+     $email = "yusufkemal02@gmail.com";
      $name = "Gebruiker";
 
     //Sender Info
