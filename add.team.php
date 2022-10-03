@@ -25,7 +25,7 @@ foreach ($_POST['groups'] as $group) {
     $sql = "insert into teams(naam,email,speurtocht_id,uuid)values('".$group['group']."','".$group['email']."','".$_GET['id']."','$uuid');";
 if (mysqli_query($conn,$sql)){
 
-    header("location:speurtocht.php");
+    header("location:sendEmail.php");
 
 }else{
     echo 'Er is een fout opgetreden';

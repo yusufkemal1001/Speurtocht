@@ -39,7 +39,7 @@ if(isset($_GET['id'])){
                 <div>
                 <div class=" flex items-center mb-5  " style="color: #F0F7F4">
                     <a href="dashboard.php" class="w-2/5 item-center"><i class="m-2 fa-solid fa-arrow-left"></i>Terug</a>
-                    <div class="m-auto justify-center text-center text-4xl w-3/5 mr-1/5">Speurtocht <?php echo $row['naam'];?></div>
+                    <div class="m-auto justify-center text-center text-4xl w-3/5 mr-1/5"><?php echo $row['naam'];?></div>
 
 
                 </div>
