@@ -12,6 +12,7 @@ if (isset($_SESSION['id'])){
 
 $sql = "insert into speurtochten(naam,user_id)values('Nieuw Speurtocht','$_SESSION[id]');";
 
+
 if (mysqli_query($conn,$sql)){
 
     header("location: dashboard.php");
