@@ -1,37 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+
 * {
-margin: 0;
-padding: 0;
-user-select: none;
-box-sizing: border-box;
-font-family: 'Poppins', sans-serif;
-
-}
-
-.alert {
-min-width: 420px;
-padding: 20px 40px;
-background: green;
-position: absolute;
-right: 0px;
-top: 10px;
-border-radius: 4px;
-border-left: 6px solid darkgreen;
-}
-
-.alert .fa-exclamation-circle {
-position: absolute;
-left: 20px;
-top: 50%;
-transform: translateY(-50%);
-color: white;
-font-size: 30px;
-}
-
-
-.alert .msg {
-color: white;    
-padding: 0 20px;
-font-size: 180px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 
 
 }
+
+
+body {
+    background: #32292F;
+}
+
+.start_btn,
+.info_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+.start_btn button {
+    font-size: 25px;
+    font-weight: 500;
+    color: #70ABAF;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.info_box {
+    width: 540px;
+    background: white;
+    border-radius: 5px;
+}
+
+.info_box .info_title {
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    padding: 0 35px;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.info_box .info_list {
+    padding: 15px 35px;
+}
+
+.info_box .info_list .info {
+    margin: 5px;
+    font-size: 17px;
+}
+.info_box .info_list .info span {
+    font-weight: 600;
+    color: #70ABAF;
+}
+
+.info_box .buttons {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 35px;
+    border-top: 1px solid black;
+}
+
+.info_box .buttons button {
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    border: 1px solid #70ABAF;
+    background: #70ABAF;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.buttons button.continue {
+    color: #70ABAF;
+    border-color: #70ABAF;
+    background: #fff;
+}
+
+.buttons button.continue:hover {
+    background: #70ABAF;
+    color: white;
+}
+
+.buttons button.quit {
+    color: #fff;
+}
+
+.buttons button.quit:hover {
+    color: #70ABAF;
+    background: #fff;
+}
+
+
