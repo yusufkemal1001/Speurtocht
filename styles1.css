@@ -108,4 +108,16 @@ body {
     background: #fff;
 }
 
+.info_box .buttons button .next {
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    border: 1px solid #70ABAF;
+    background: #70ABAF;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
 
