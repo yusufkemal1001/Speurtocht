@@ -13,8 +13,14 @@
     <div class="text-m text-white"><a href="logout.php" class="flex float-right items-center hover:text-gray-600"><i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Uitloggen</a></div>
 </div>
 <div class="grid grid-cols-2">
-    <?php include "show.speurtocht.php";?>
+    <div>
+        <?php include "show.players.php";?>
+    </div>
+    <div>
+        <?php /*include "tinder.php";*/?>
+    </div>
+
 </div>
-<a href="add.speurtocht.php" class="text-center color-red "><div class="text-center m-auto " style="height: 50px; width: 50%;border-radius: 10px; background-color: lightblue;display: flex;justify-content: center;align-items: center;"><i class="fa-solid fa-plus pr-2"></i>Speurtocht Aanmaken</div></a>
+<a href="add.speurtocht.php" class="text-center color-red "><div class="text-center m-auto " style="height: 50px; width: 50%;border-radius: 10px; background-color: lightblue;display: flex;justify-content: center;align-items: center;"><i class="fa-solid fa-plus pr-2"></i>Speurtocht stoppen</div></a>
 </body>
 </html>

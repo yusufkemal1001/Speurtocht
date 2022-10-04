@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
     left: 63%;
     width: 100%;
     position: relative;">
-        <div class="text-center text-white text-2xl"><?php echo "Er zijn geen groepen";?></div>
+        <div class="text-center text-white text-2xl"><?php echo "Er zijn geen speurtochten";?></div>
     </div>
     <?php
 }

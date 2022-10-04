@@ -37,7 +37,7 @@ body {
 }
 
 .info_box {
-    width: 540px;
+    width: 600px;
     background: white;
     border-radius: 5px;
 }
@@ -71,8 +71,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 35px;
-    border-top: 1px solid black;
+
+}
+.teamNameForm{
+    border-top: 1px black solid;
+}
+.teamNameInput{
+    border: 1px black solid ;
+    border-radius: 7px;
 }
 
 .info_box .buttons button {
