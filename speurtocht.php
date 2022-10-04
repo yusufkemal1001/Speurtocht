@@ -33,16 +33,41 @@ $row = mysqli_fetch_assoc($sql);
         </div>
             <div class="buttons">
                 
-                <a href="">
+                <a href="save-image.php">
                 <button class="next">Ga verder</button>
                 </a>
             </div>
             <div class="field-image">
                 <label>Selecteer foto</label>
-                <input type="file" name="image" accept="image/jpeg,image/jpg" required>
+                <input type="file" name="image-name" value="insert" accept="image/jpeg,image/jpg" required>
               </div>
     </div>     
     
+    <?php
+
+function insert() {
+
+    
+
+    // if(isset($_FILES['image'])){
+    //     $img_name = $_FILES['image-name'];
+    //     $img_explode = explode('.',$img_name);
+    //     $img_ext = end($img_explode);
+
+    //     $extensions = ["jpeg", "png", "jpg"];
+    //     if(in_array($img_ext, $extensions) === true){
+    //         $types = ["image/jpeg", "image/jpg", "image/png"];
+    //         if(in_array($img_type, $types) === true){
+    //             $time = time();
+    //             $new_img_name = $time.$img_name;
+    //             if(move_uploaded_file($tmp_name,"images/".$new_img_name)){
+    //                 $insert_query = mysqli_query($conn, "INSERT INTO antwoorden (id, tekst, image, team_id, vraag_id, behaald) VALUES ('0','$img_name',0,0,0)");
+//                 }
+//             }   
+//         }
+//     }
+}
+    ?>
 
 
 
