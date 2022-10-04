@@ -34,7 +34,7 @@ foreach ($_POST['groups'] as $group) {
         $groupName = $group['group'];
         $groupEmail = $group['email'];
         if (!filter_var($groupEmail, FILTER_VALIDATE_EMAIL)) {
-            echo "excuse me good sir/madam/them/they/attack helicopter, could you please check your email if its correct? i couldn't find an email 'I am good rooster '-Hangman 2022 Top Gun Maverick";// invalid emailaddress
+            echo "excuse me good sir/madam/them/they/attack helicopter, could you please check your email if its correct? i couldn't find an email 'I am good rooster '-Hangman 2022 Top Gun Mav";// invalid emailaddress
             die();
         }
         $mail = new PHPMailer('true');
@@ -51,10 +51,21 @@ foreach ($_POST['groups'] as $group) {
         $mail->addAddress("$groupEmail", "$groupName");
 
         $mail->Subject = "Meedoen aan de speurtocht ";
-        $mail->Body = 'this is body w
-    you can click on this link and join the speurtocht
-    <a href=http://127.0.0.1:8080/speurtocht.php?id=$uuid>Meedoen aan de speurtocht!</a>
-    ';
+        $mail->isHTML();
+        $mail->Body = "
+     <h3><strong>Uw uitnodiging voor de Speurtocht!</strong></h3>
+     <p>&nbsp;</p>
+     
+     Klik <strong><a href='http://127.0.0.1:8080/quiz.html?id=$uuid'>hier</a></strong> om mee te doen aan de speurtocht.
+     <p>&nbsp;</p>
+     
+     <p>Veel plezier en we hopen dat u een goeie tijd heeft!</p>
+     <p>&nbsp;</p>
+     <p>Scrumgroep 2</p>
+    
+    
+    
+    ";
         /*$checkMail = new VerifyEmail();
 
         if($checkMail->check($groupEmail)){
@@ -67,8 +78,7 @@ foreach ($_POST['groups'] as $group) {
         }*/
 
         $mail->send();
-
-
+        header("location:admin.speurtocht.php?id=".$_GET['speurtocht_id']);
 
 
     }
