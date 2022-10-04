@@ -1,7 +1,9 @@
 <?php
 include 'dbcon.php';
-$sql = mysqli_query($conn, "SELECT vraag FROM vragen WHERE vraag IS NOT NULL");
+
+$sql = mysqli_query($conn, "SELECT vragen.id,vragen.vraag, vragen.type, teams.uuid, teams.speurtocht_id, teams.naam as teamName from teams inner join vragen on teams.speurtocht_id = vragen.speurtocht_id where teams.uuid = '$_GET[id]' ORDER BY RAND()");
 // print_r($sql);
+//
 
 ?>
 
@@ -11,7 +13,7 @@ $row = mysqli_fetch_assoc($sql);
 
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,7 +33,7 @@ $row = mysqli_fetch_assoc($sql);
         </div>
             <div class="buttons">
                 
-                <a href="speurtocht.html">
+                <a href="">
                 <button class="next">Ga verder</button>
                 </a>
             </div>
@@ -41,14 +43,9 @@ $row = mysqli_fetch_assoc($sql);
               </div>
     </div>     
     
-    
-<?php
 
 
-$sql2 = mysqli_query($conn, "INSERT INTO antwoorden (image) VALUES ()");
-          exec($sql2);
 
-?>
 
 </body>
 </html>

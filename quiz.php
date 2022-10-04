@@ -24,7 +24,7 @@
                 <a href="https://www.instagram.com/p/Cf5EQ6JDOWm/">
                 <button class="quit">Verlaat</button>
                 </a>
-                <a href="speurtocht.html">
+                <a href="speurtocht.php?id=<?php echo $_GET['id'] ;?>">
                 <button  class="continue">Ga verder</button>
                 </a>
             </div>
