@@ -9,7 +9,6 @@
 
        $row = mysqli_fetch_assoc($sql);
 
-       echo $row['vraag_id'];
        ?>
 
 
@@ -65,7 +64,7 @@
 
                                     </div>
 
-                                    <script lang="javascript">
+       <script lang="javascript">
             window.addEventListener('loadCamera', _ => {
                 loadCamera()
             })
@@ -161,14 +160,14 @@
                 newPhotoButton.classList.remove('hidden')
 
                 let imageFile
-                canvas.toBlob(function (blob) {
-                    imageFile = new File([blob], 'photo.png', blob)
-                @this.upload('photoInput', imageFile, (uploadedFilename) => {
-                    console.log("Goed!");
-                }, () => {
-                    console.log("Fout!");
-                })
-                }, 'image/jpeg', 0.95)
+              //   canvas.toBlob(function (blob) {
+              //       imageFile = new File([blob], 'photo.png', blob)
+              //   @this.upload('photoInput', imageFile, (uploadedFilename) => {
+              //       console.log("Goed!");
+              //   }, () => {
+              //       console.log("Fout!");
+              //   })
+              //   }, 'image/jpeg', 0.95)
             }
 
             function newPhoto() {
