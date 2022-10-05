@@ -2,7 +2,11 @@
 include 'dbcon.php';
 
 $sql = mysqli_query($conn,"SELECT naam FROM teams WHERE uuid = '$_GET[id]';");
+$sql1 = mysqli_query($conn, "SELECT vragen.id as vraag_id,vragen.vraag, vragen.type, teams.uuid, teams.speurtocht_id, teams.naam as teamName from teams inner join vragen on teams.speurtocht_id = vragen.speurtocht_id where teams.uuid = '$_GET[id]' ORDER BY RAND()");
+
+
 $result = mysqli_fetch_assoc($sql);
+$result1 = mysqli_fetch_assoc($sql1);
 echo $result['naam'];
 ?>
 <!DOCTYPE html>
@@ -41,7 +45,7 @@ echo $result['naam'];
                 <a href="https://www.instagram.com/p/Cf5EQ6JDOWm/">
                 <button class="quit">Verlaat</button>
                 </a>
-                <a href="speurtocht.php?id=<?php echo $_GET['id'] ;?>">
+                <a href="speurtocht.php?id=<?php echo $_GET['id'] ;?>&vraag_id=<?php echo $result1['vraag_id']; ?>">
                 <button  class="continue">Ga verder</button>
                 </a>
             </div>

@@ -1,5 +1,7 @@
 <?php 
 
+	
+
 if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
 	include "dbcon.php";
 
@@ -28,17 +30,18 @@ if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
 				move_uploaded_file($tmp_name, $img_upload_path);
 
 				// Insert into Database
-				$sql = "INSERT INTO antwoorden (tekst, image, team_id, vraag_id, behaald) VALUES ('0','$new_img_name',0,0,0)";
+				$sql = "INSERT INTO antwoorden (tekst, image, team_id, vraag_id, behaald) VALUES ('0','$new_img_name','$_GET[id]','$_GET[vraag_id]',0)";
 				mysqli_query($conn, $sql);
-				header("Location: speurtocht.php");
+				header("Location: speurtocht.php?id=".$_GET['id']
+				);  
 			}else {
 				$em = "You can't upload files of this type";
-		        header("Location: speurtocht.php?error=$em");
+		        header("Location: speurtocht.php?error=$em & id=".$_GET['id']);
 			}
 		}
 	}else {
 		$em = "unknown error occurred!";
-		header("Location: speurtocht.php?error=$em");
+		header("Location: speurtocht.php?error=$em&id=".$_GET['id']);
 	}
 
 }else {

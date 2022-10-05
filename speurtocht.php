@@ -1,11 +1,16 @@
-<?php
-include 'dbcon.php';
+       <?php
+       include 'dbcon.php';
 
-$sql = mysqli_query($conn, "SELECT vragen.id,vragen.vraag, vragen.type, teams.uuid, teams.speurtocht_id, teams.naam as teamName from teams inner join vragen on teams.speurtocht_id = vragen.speurtocht_id where teams.uuid = '$_GET[id]' ORDER BY RAND()");
-// print_r($sql);
-//
-$row = mysqli_fetch_assoc($sql);
-?>
+       $sql = mysqli_query($conn, "SELECT vragen.id as vraag_id,vragen.vraag, vragen.type, teams.uuid, teams.speurtocht_id, teams.naam as teamName from teams inner join vragen on teams.speurtocht_id = vragen.speurtocht_id where teams.uuid = '$_GET[id]' ORDER BY RAND()");
+
+
+       // print_r($sql);
+       //
+
+       $row = mysqli_fetch_assoc($sql);
+
+       echo $row['vraag_id'];
+       ?>
 
 
 
@@ -25,7 +30,7 @@ $row = mysqli_fetch_assoc($sql);
 	<?php if (isset($_GET['error'])): ?>
 		<p><?php echo $_GET['error']; ?></p>
 	<?php endif ?>
-     <form action="save-image.php"
+     <form action="save-image.php?id=<?php echo $_GET['id'] ; ?>&vraag_id=<?php echo $row['vraag_id'];?>"
            method="post"
            enctype="multipart/form-data">
 
@@ -37,5 +42,24 @@ $row = mysqli_fetch_assoc($sql);
                   value="Upload">
      	
      </form>
+
+     <form action="save-text.php?id=<?php echo $_GET['id'] ; ?>&vraag_id=<?php echo $row['vraag_id'];?>"
+              action="save-text.php"
+              method="post"
+              enctype="multipart/form-data">
+
+              <input type="text" 
+                  name="my_text">
+
+
+              <input type="submit" 
+                  name="submit"
+                  value="Upload">
+
+
+
+              </form>
+
+              
 </body>
 </html>
