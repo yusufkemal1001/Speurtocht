@@ -3,7 +3,9 @@ include 'dbcon.php';
 require 'login.class.php';
 
 //require 'db.php';
-
+if (isset($_SESSION['active_speurtocht_id'])){
+    header('location:admin.speurtocht.php?id='.$_GET['id']);
+}
 $select = new Select();
 
 if (isset($_SESSION["id"])){
@@ -54,7 +56,7 @@ if(isset($_GET['id'])){
                                         <div class="flex p-2 justify-between">
                                             <b><label>Speurtocht Naam</label></b>&nbsp;&nbsp;
                                             <input type="text" class=" rounded-md w-3/5 pl-2" style="background-color: #1D3334;color: white;" value="<?php echo $row['naam'];?>" name="name" required /><br>
-                                            <button><a href="update.speurtocht.php?id=<?php echo $row['id']; ?>"><i class="fa-regular fa-pen-to-square m-2"></i></a></button>
+                                            <button><a href="update.speurtocht.php?id=<?php echo $row['id']; ?>"><i class="fa-regular fa-floppy-disk m-2"></i></a></button>
 
                                         </div>
                                     </form>
@@ -92,6 +94,7 @@ if(isset($_GET['id'])){
                                         <form action="update.vraag.php" method="get">
                                             <input type="hidden" name="speurtocht_id" value="<?= $row["id"]; ?>" />
                                             <input type="hidden" name="id" value="<?= $row1["id"]; ?>" />
+
                                             <div class="vraag-counter flex p-2 justify-between items-center">
                                                 <textarea type="text" class="bg-white rounded-md w-3/6 pl-2" value="<?php echo $row1['vraag'];?>" name="vraag" required rows="2" ><?php echo $row1['vraag'];?></textarea>
                                                 <input type="radio" id="Tekst" name="radio" value="0"<?php if ($row1['type']=='0'){?> checked="true"<?php }?>  >
@@ -99,8 +102,8 @@ if(isset($_GET['id'])){
                                                 <label for="Tekst">Tekst</label><br>
                                                 <input type="radio" id="Tekst" name="radio" value="1" <?php if ($row1['type']=='1'){?> checked="true"<?php }?> >
                                                 <label for="css">Foto</label><br>
-                                                <button><a href="update.vraag.php?id=<?php echo $row1['id']; ?>"><i class="fa-regular fa-pen-to-square m-2"></i></a></button>
-                                                <a href="delete.question.php?id=<?php echo $row1['id']; ?>&speurtocht_id=<?php echo $row['id']?>"><i class="fa-solid fa-trash m-2"></i></a>
+                                                <button><a href="update.vraag.php?id=<?php echo $row1['id']; ?>"><i class="fa-regular fa-floppy-disk"></i></a></button>
+                                                <a href="delete.question.php?id=<?php echo $row1['id']; ?>&speurtocht_id=<?php echo $row['id']?>"><i class="fa-regular fa-trash-can"></i></a>
                                             </div>
                                         </form>
                                     </div>
