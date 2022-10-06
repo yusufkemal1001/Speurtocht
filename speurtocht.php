@@ -43,27 +43,7 @@
      	 -->
      <!-- </form> -->
 
-     <div id="video-input" wire:ignore class="hidden">
-                                        <video id="video-playback" autoplay></video>
-                                        <canvas class="hidden"></canvas>
-                                        <img class="hidden" alt="">
 
-                                        <div class="flex flex-row gap-2 pt-2">
-                                            <select name="" id="cameraOptions" class="bg-neutral-600 rounded-md">
-                                                <option value="">Selecteer camera</option>
-                                            </select>
-                                            <button id="start-camera-button" onclick="startCamera()"
-                                                    class="bg-green-600 p-2 rounded-md">Selecteer camera
-                                            </button>
-                                            <button id="screenshot-button" onclick="takeScreenshot()"
-                                                    class="bg-green-600 p-2 rounded-md hidden">Maak foto
-                                            </button>
-                                            <button id="try-again-button" onclick="newPhoto()"
-                                                    class="bg-green-600 p-2 rounded-md hidden">Nieuwe foto
-                                            </button>
-                                        </div>
-
-                                    </div>
 
                                     <script lang="javascript">
             window.addEventListener('loadCamera', _ => {
@@ -200,6 +180,27 @@
 
             loadCamera()
         </script>
+    <div id="video-input" wire:ignore class="hidden">
+        <video id="video-playback" autoplay></video>
+        <canvas class="hidden"></canvas>
+        <img class="hidden" alt="">
+
+        <div class="flex flex-row gap-2 pt-2">
+            <select name="" id="cameraOptions" class="bg-neutral-600 rounded-md">
+                <option value="">Selecteer camera</option>
+            </select>
+            <button id="start-camera-button" onclick="startCamera()"
+                    class="bg-green-600 p-2 rounded-md">Selecteer camera
+            </button>
+            <button id="screenshot-button" onclick="takeScreenshot()"
+                    class="bg-green-600 p-2 rounded-md hidden">Maak foto
+            </button>
+            <button id="try-again-button" onclick="newPhoto()"
+                    class="bg-green-600 p-2 rounded-md hidden">Nieuwe foto
+            </button>
+        </div>
+
+    </div>
 
      <form action="save-text.php?id=<?php echo $_GET['id'] ; ?>&vraag_id=<?php echo $row['vraag_id'];?>"
               action="save-text.php"

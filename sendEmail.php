@@ -77,7 +77,9 @@ foreach ($_POST['groups'] as $group) {
             echo 'Email &lt;'.$groupEmail.'&gt; is not valid and not exist!';
         }*/
 
-        $mail->send();
+        //$mail->send();
+        session_start();
+        $_SESSION['active_speurtocht_id']=$_GET['id'];
         header("location:admin.speurtocht.php?id=".$_GET['id']);
 
 
