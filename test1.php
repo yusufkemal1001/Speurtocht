@@ -1,7 +1,7 @@
 <?php 
 include 'dbcon.php';
 
-$sql = mysqli_query($conn, "SELECT antwoorden.id, antwoorden.tekst, antwoorden.image, antwoorden.behaald, teams.speurtocht_id, vragen.vraag FROM ((antwoorden INNER JOIN teams ON antwoorden.team_id = teams.id) INNER JOIN vragen ON antwoorden.vraag_id = vragen.id) WHERE behaald = 0 AND teams.speurtocht_id = 6;");
+$sql = mysqli_query($conn, "SELECT antwoorden.id, antwoorden.tekst, antwoorden.image, antwoorden.behaald, teams.speurtocht_id, vragen.vraag FROM ((antwoorden INNER JOIN teams ON antwoorden.team_id = teams.id) INNER JOIN vragen ON antwoorden.vraag_id = vragen.id) WHERE behaald = 0 AND antwoorden.speurtocht_id = 6;");
 $sql1 = mysqli_query($conn, "SELECT COUNT(id) FROM antwoorden WHERE behaald = 0 AND speurtocht_id = 6;");
 
 $row = mysqli_fetch_assoc($sql);
@@ -21,8 +21,7 @@ $row1 = mysqli_fetch_assoc($sql1);
 <body style=" margin-top:100px">
     <div class="tbg">
         <div class="theader">
-          
-            <h3 id="title"><?php if($row1['COUNT(id)'] != 0){ echo $row['vraag'];}else echo"De openstaande vragen zijn nagekeken" ?></h3>
+          <h3 id="title"><?php if($row1['COUNT(id)'] != 0){ echo $row['vraag'];}else echo"Alles is nagekeken" ?></h3>
           <i class="fa fa-cog" aria-hidden="true"></i>
           <i class="fa fa-comments" aria-hidden="true"></i>
           <div class="tlogo">
@@ -32,9 +31,7 @@ $row1 = mysqli_fetch_assoc($sql1);
         <div class="tbgwrap">
           <div class="tphoto">
           <img src="uploads/<?php if($row1['COUNT(id)'] != 0){echo $row['image'];}else echo"American-psycho-patrick-bateman.jpg"?>"/>.
-          <h4> <?php if($row1['COUNT(id)'] != 0){ echo $row['tekst'];}else echo"U heeft alle openstaande vragen beoordeeld"?></h4>
-          
-          
+          <h4> <?php if($row1['COUNT(id)'] != 0){ echo $row['tekst'];}else echo" "?></h4>
           </div>
           <div class="tcontrols">
             <?php //<div class="tno" aria-hidden="true">?>
