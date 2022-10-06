@@ -24,7 +24,7 @@ if (!isset($_SESSION['active_speurtocht_id'])){
         <?php include "show.players.php";?>
     </div>
     <div>
-        <?php /*include "tinder.php";*/?>
+        <?php include "test1.php";?>
     </div>
 
 </div>
