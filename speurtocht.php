@@ -2,14 +2,13 @@
        include 'dbcon.php';
 
        $sql = mysqli_query($conn, "SELECT vragen.id as vraag_id,vragen.vraag, vragen.type, teams.uuid, teams.speurtocht_id, teams.naam as teamName from teams inner join vragen on teams.speurtocht_id = vragen.speurtocht_id where teams.uuid = '$_GET[id]' ORDER BY RAND()");
-
+       $sql1 = mysqli_query($conn, "SELECT vragen.vraag, antwoorden.behaald FROM vragen LEFT JOIN antwoorden ON vragen.speurtocht_id=antwoorden.speurtocht_id");
 
        // print_r($sql);
        //
 
        $row = mysqli_fetch_assoc($sql);
 
-       echo $row['vraag_id'];
        ?>
 
 
@@ -45,7 +44,7 @@
 
 
 
-                                    <script lang="javascript">
+       <script lang="javascript">
             window.addEventListener('loadCamera', _ => {
                 loadCamera()
             })
@@ -141,14 +140,14 @@
                 newPhotoButton.classList.remove('hidden')
 
                 let imageFile
-                canvas.toBlob(function (blob) {
-                    imageFile = new File([blob], 'photo.png', blob)
-                @this.upload('photoInput', imageFile, (uploadedFilename) => {
-                    console.log("Goed!");
-                }, () => {
-                    console.log("Fout!");
-                })
-                }, 'image/jpeg', 0.95)
+              //   canvas.toBlob(function (blob) {
+              //       imageFile = new File([blob], 'photo.png', blob)
+              //   @this.upload('photoInput', imageFile, (uploadedFilename) => {
+              //       console.log("Goed!");
+              //   }, () => {
+              //       console.log("Fout!");
+              //   })
+              //   }, 'image/jpeg', 0.95)
             }
 
             function newPhoto() {
