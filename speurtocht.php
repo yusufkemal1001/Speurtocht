@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="styles1.css">
     <title>Speurtocht Pagina</title>
 </head>
-<body>
 
 <!-- Het weergeven van de vragen -->
 <body>
@@ -32,30 +31,57 @@
 
  <!--  De Form voor het uploaden van de tekst vragen  -->
 <form action="save-text.php?id=<?php echo $_GET['id'] ; ?>&vraag_id=<?php echo $row['vraag_id'];?>"
+           
               action="save-text.php"
               method="post"
-            enctype="multipart/form-data">
+              enctype="multipart/form-data">
 
               <input type="text" 
                   name="my_text">
-
-              <button>
+            
               <input type="submit" 
-                  class="text-button"
+              style= "margin: 0 5px;
+                height: 40px;
+                width: 100px;
+                position: relative;
+                border: 1px solid #70ABAF;
+                background: #70ABAF;
+                border-radius: 5px;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;"
+
                   name="submit"
                   value="Upload">
-              </button>    
+             
 </form>
 
+
+<!-- style="position: absolute; top: 150px; left: 164px; font-size: 30px;"   -->
+<!-- tyle= "margin: 0 5px;
+                height: 40px;
+                width: 100px;
+                border: 1px solid #70ABAF;
+                background: #70ABAF;
+                border-radius: 5px;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                top: 100px;
+                left: 80px;
+                position: absolute;">   -->
  <!--  De Form voor het uploaden van de foto vragen  -->
 <form action="save-image.php?id=<?php echo $_GET['id'] ; ?>&vraag_id=<?php echo $row['vraag_id'];?>" method="post" enctype="multipart/form-data">
-    Select Image File to Upload:
+    Selecteer uw foto:
     <input type="file" name="file">
-    <input type="submit" name="submit" value="Upload">
-    </form>                           
+    <input type="submit" name= "submit" value="Upload">
+</form>                           
 
          
  <!--  De HTML voor het maken van de foto  -->
+
     <div id="video-input" wire:ignore class="hidden">
         <video id="video-playback" autoplay></video>
         <canvas class="hidden"></canvas>
