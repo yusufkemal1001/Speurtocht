@@ -2,12 +2,13 @@
        include 'dbcon.php';
 
        $sql = mysqli_query($conn, "SELECT vragen.id as vraag_id,vragen.vraag, vragen.type, teams.uuid, teams.speurtocht_id, teams.naam as teamName from teams inner join vragen on teams.speurtocht_id = vragen.speurtocht_id where teams.uuid = '$_GET[id]' ORDER BY RAND()");
-       $sql1 = mysqli_query($conn, "SELECT vragen.vraag, antwoorden.behaald FROM vragen LEFT JOIN antwoorden ON vragen.speurtocht_id=antwoorden.speurtocht_id");
+       $sql1 = mysqli_query($conn, "SELECT vragen.vraag, antwoorden.behaald FROM vragen LEFT JOIN antwoorden ON vragen.speurtocht_id=antwoorden.speurtocht_id;");
 
        // print_r($sql);
        //
 
        $row = mysqli_fetch_assoc($sql);
+       $row1 = mysqli_fetch_assoc($sql1);
 
        ?>
 
@@ -41,8 +42,47 @@
                   value="Upload">
      	 -->
      <!-- </form> -->
+    
+    <div class="info_box">
 
-     <div id="video-input" wire:ignore class="hidden">
+            
+    <?php
+
+echo $row['vraag'];
+
+
+?>
+
+
+         <form action="save-text.php?id=<?php echo $_GET['id'] ; ?>&vraag_id=<?php echo $row['vraag_id'];?>"
+              action="save-text.php"
+              method="post"
+              enctype="multipart/form-data">
+
+              <input type="text" 
+                  name="my_text">
+
+
+              <input type="submit" 
+                  name="submit"
+                  value="Upload">
+
+        </form>
+
+                
+                <!-- <a href="save-image.php?id=<?php echo $_GET['id'];?>">
+                <button class="next">Ga verder</button>
+                </a>
+            </div> -->
+    <form action="save-image.php?id=<?php echo $_GET['id'] ; ?>&vraag_id=<?php echo $row['vraag_id'];?>" method="post" enctype="multipart/form-data">
+    Select Image File to Upload:
+    <input type="file" name="file">
+    <input type="submit" name="submit" value="Upload">
+</form>                           
+
+         
+
+    <div id="video-input" wire:ignore class="hidden">
                                         <video id="video-playback" autoplay></video>
                                         <canvas class="hidden"></canvas>
                                         <img class="hidden" alt="">
@@ -60,10 +100,12 @@
                                             <button id="try-again-button" onclick="newPhoto()"
                                                     class="bg-green-600 p-2 rounded-md hidden">Nieuwe foto
                                             </button>
-                                        </div>
+    </div>
 
-                                    </div>
 
+
+
+           
        <script lang="javascript">
             window.addEventListener('loadCamera', _ => {
                 loadCamera()
@@ -200,22 +242,20 @@
             loadCamera()
         </script>
 
-     <form action="save-text.php?id=<?php echo $_GET['id'] ; ?>&vraag_id=<?php echo $row['vraag_id'];?>"
-              action="save-text.php"
-              method="post"
-              enctype="multipart/form-data">
+            <?php  
+            
+                if ($row1['COUNT(id)'] = 0){
 
-              <input type="text" 
-                  name="my_text">
+                    header("Location: end.php& id=".$_GET['id']);
 
-
-              <input type="submit" 
-                  name="submit"
-                  value="Upload">
+                }
+            
+            ?>
 
 
+    
 
-              </form>
+
 
               
 </body>
