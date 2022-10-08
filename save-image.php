@@ -21,7 +21,8 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
             // Insert image file name into database
 			$insert = $conn->query("INSERT INTO antwoorden (tekst, image, team_id, vraag_id, behaald) VALUES ('0','.$fileName','$_GET[id]','$_GET[vraag_id]',0)");
             if($insert){
-                $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
+                header("Location: speurtocht.php?id=".$_GET['id']
+				);  
             }else{
                 $statusMsg = "File upload failed, please try again.";
             } 

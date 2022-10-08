@@ -39,10 +39,12 @@
               <input type="text" 
                   name="my_text">
 
-
+              <button>
               <input type="submit" 
+                  class="text-button"
                   name="submit"
                   value="Upload">
+              </button>    
 </form>
 
  <!--  De Form voor het uploaden van de foto vragen  -->
