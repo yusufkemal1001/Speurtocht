@@ -1,7 +1,15 @@
 <?php
+
+
 include 'dbcon.php';
 require 'login.class.php';
 
+
+
+
+if (isset($_SESSION['active_speurtocht_id'])){
+    header('location:admin.speurtocht.php?id='.$_GET['id']);
+}
 //require 'db.php';
 
 $select = new Select();

@@ -1,6 +1,11 @@
 <?php
 require 'login.class.php';
 
+if (isset($_SESSION['active_speurtocht_id'])) {
+    header("location:admin.speurtocht.php?id=".$_SESSION['active_speurtocht_id']);
+}
+
+
 //require 'db.php';
 
 
