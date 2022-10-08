@@ -1,18 +1,13 @@
-       <?php
-       include 'dbcon.php';
+<?php
+ include 'dbcon.php';
 
-       $sql = mysqli_query($conn, "SELECT vragen.id as vraag_id,vragen.vraag, vragen.type, teams.uuid, teams.speurtocht_id, teams.naam as teamName from teams inner join vragen on teams.speurtocht_id = vragen.speurtocht_id where teams.uuid = '$_GET[id]' ORDER BY RAND()");
-       $sql1 = mysqli_query($conn, "SELECT vragen.vraag, antwoorden.behaald FROM vragen LEFT JOIN antwoorden ON vragen.speurtocht_id=antwoorden.speurtocht_id;");
+ $sql = mysqli_query($conn, "SELECT vragen.id as vraag_id,vragen.vraag, vragen.type, teams.uuid, teams.speurtocht_id, teams.naam as teamName from teams inner join vragen on teams.speurtocht_id = vragen.speurtocht_id where teams.uuid = '$_GET[id]' ORDER BY RAND()");
+ $sql1 = mysqli_query($conn, "SELECT vragen.vraag, antwoorden.behaald FROM vragen LEFT JOIN antwoorden ON vragen.speurtocht_id=antwoorden.speurtocht_id;");
 
-       // print_r($sql);
-       //
+ $row = mysqli_fetch_assoc($sql);
+ $row1 = mysqli_fetch_assoc($sql1);
 
-       $row = mysqli_fetch_assoc($sql);
-       $row1 = mysqli_fetch_assoc($sql1);
-
-       ?>
-
-
+?>
 
 <!DOCTYPE html> 
 <html lang="en">
@@ -21,43 +16,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles1.css">
-    <title>Document</title>
+    <title>Speurtocht Pagina</title>
 </head>
 <body>
 
-<!-- Form -->
+<!-- Het weergeven van de vragen -->
 <body>
-	<?php if (isset($_GET['error'])): ?>
-		<p><?php echo $_GET['error']; ?></p>
-	<?php endif ?>
-     <!-- <form action="save-image.php?id=<?php echo $_GET['id'] ; ?>&vraag_id=<?php echo $row['vraag_id'];?>"
-           method="post"
-           enctype="multipart/form-data">
-
-           <input type="file" 
-                  name="my_image" accept="image/*;capture=camera">
-
-           <input type="submit" 
-                  name="submit"
-                  value="Upload">
-     	 -->
-     <!-- </form> -->
-    
-    <div class="info_box">
-
-            
-    <?php
-
-echo $row['vraag'];
+<div class="info_box">   
+    <div class="info_title">    
+        <?php
+        echo $row['vraag'];
+        ?>
+    </div>
 
 
-?>
-
-
-         <form action="save-text.php?id=<?php echo $_GET['id'] ; ?>&vraag_id=<?php echo $row['vraag_id'];?>"
+ <!--  De Form voor het uploaden van de tekst vragen  -->
+<form action="save-text.php?id=<?php echo $_GET['id'] ; ?>&vraag_id=<?php echo $row['vraag_id'];?>"
               action="save-text.php"
               method="post"
-              enctype="multipart/form-data">
+            enctype="multipart/form-data">
 
               <input type="text" 
                   name="my_text">
@@ -66,46 +43,36 @@ echo $row['vraag'];
               <input type="submit" 
                   name="submit"
                   value="Upload">
+</form>
 
-        </form>
-
-                
-                <!-- <a href="save-image.php?id=<?php echo $_GET['id'];?>">
-                <button class="next">Ga verder</button>
-                </a>
-            </div> -->
-    <form action="save-image.php?id=<?php echo $_GET['id'] ; ?>&vraag_id=<?php echo $row['vraag_id'];?>" method="post" enctype="multipart/form-data">
+ <!--  De Form voor het uploaden van de foto vragen  -->
+<form action="save-image.php?id=<?php echo $_GET['id'] ; ?>&vraag_id=<?php echo $row['vraag_id'];?>" method="post" enctype="multipart/form-data">
     Select Image File to Upload:
     <input type="file" name="file">
     <input type="submit" name="submit" value="Upload">
-</form>                           
+    </form>                           
 
          
-
+ <!--  De HTML voor het maken van de foto  -->
     <div id="video-input" wire:ignore class="hidden">
-                                        <video id="video-playback" autoplay></video>
-                                        <canvas class="hidden"></canvas>
-                                        <img class="hidden" alt="">
+        <video id="video-playback" autoplay></video>
+        <canvas class="hidden"></canvas>
+         <img class="hidden" alt="">
 
-                                        <div class="flex flex-row gap-2 pt-2">
-                                            <select name="" id="cameraOptions" class="bg-neutral-600 rounded-md">
-                                                <option value="">Selecteer camera</option>
-                                            </select>
-                                            <button id="start-camera-button" onclick="startCamera()"
-                                                    class="bg-green-600 p-2 rounded-md">Selecteer camera
-                                            </button>
-                                            <button id="screenshot-button" onclick="takeScreenshot()"
-                                                    class="bg-green-600 p-2 rounded-md hidden">Maak foto
-                                            </button>
-                                            <button id="try-again-button" onclick="newPhoto()"
-                                                    class="bg-green-600 p-2 rounded-md hidden">Nieuwe foto
-                                            </button>
+          <div class="flex flex-row gap-2 pt-2">
+          <select name="" id="cameraOptions" class="bg-neutral-600 rounded-md">
+         <option value="">Selecteer camera</option>
+          </select>
+        <button id="start-camera-button" onclick="startCamera()"
+        class="bg-green-600 p-2 rounded-md">Selecteer camera
+     </button>
+     <button id="screenshot-button" onclick="takeScreenshot()"
+    class="bg-green-600 p-2 rounded-md hidden">Maak foto
+    </button>                                 
     </div>
 
 
-
-
-           
+    <!--  De javascript voor het maken van de foto  -->
        <script lang="javascript">
             window.addEventListener('loadCamera', _ => {
                 loadCamera()
@@ -241,22 +208,6 @@ echo $row['vraag'];
 
             loadCamera()
         </script>
-
-            <?php  
-            
-                if ($row1['COUNT(id)'] = 0){
-
-                    header("Location: end.php& id=".$_GET['id']);
-
-                }
-            
-            ?>
-
-
-    
-
-
-
               
 </body>
 </html>
