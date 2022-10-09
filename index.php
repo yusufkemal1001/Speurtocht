@@ -56,7 +56,7 @@ if (isset($_POST["submit"])){
         </div>
 
     <button type="submit" name="submit">Log In</button>
-    <div class="link">Not yet signed up? <a href="signup.php">Signup now</a></div>
+<!--    <div class="link">Not yet signed up? <a href="signup.php">Signup now</a></div>-->
 </form>
 
 <script src="javascript/pass-show-hide.js"></script>

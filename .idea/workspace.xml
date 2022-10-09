@@ -3,18 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="fb04de34-e862-43cd-949c-afd38253c617" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add.player.to.speurtocht.php" beforeDir="false" afterPath="$PROJECT_DIR$/add.player.to.speurtocht.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dbcon.php" beforeDir="false" afterPath="$PROJECT_DIR$/dbcon.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail1.php" beforeDir="false" afterPath="$PROJECT_DIR$/mail1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teams.php" beforeDir="false" afterPath="$PROJECT_DIR$/teams.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz.php" beforeDir="false" afterPath="$PROJECT_DIR$/quiz.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save-text.php" beforeDir="false" afterPath="$PROJECT_DIR$/save-text.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/sendEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/speurtocht.php" beforeDir="false" afterPath="$PROJECT_DIR$/speurtocht.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test1.php" beforeDir="false" afterPath="$PROJECT_DIR$/test1.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
@@ -27,6 +32,12 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+    </include_path>
   </component>
   <component name="ProjectId" id="2El1RJcK2gAEqCDmjh4wzUzpKcb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -60,7 +71,11 @@
       <option name="presentableId" value="Default" />
       <updated>1663155348403</updated>
       <workItem from="1663155350695" duration="40379000" />
-      <workItem from="1663846981976" duration="37546000" />
+      <workItem from="1663846981976" duration="41300000" />
+      <workItem from="1664371069944" duration="1431000" />
+      <workItem from="1664373999498" duration="448000" />
+      <workItem from="1664374570257" duration="33296000" />
+      <workItem from="1664983677430" duration="27081000" />
     </task>
     <servers />
   </component>

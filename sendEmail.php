@@ -56,7 +56,7 @@ foreach ($_POST['groups'] as $group) {
      <h3><strong>Uw uitnodiging voor de Speurtocht!</strong></h3>
      <p>&nbsp;</p>
      
-     Klik <strong><a href='http://127.0.0.1:8080/quiz.php?id=$uuid'>hier</a></strong> om mee te doen aan de speurtocht.
+     Klik <strong><a href='http://127.0.0.1:8080/quiz.php?id=$uuid&speurtocht_id=$_GET[id]'>hier</a></strong> om mee te doen aan de speurtocht.
      <p>&nbsp;</p>
      
      <p>Veel plezier en we hopen dat u een goeie tijd heeft!</p>
@@ -77,7 +77,7 @@ foreach ($_POST['groups'] as $group) {
             echo 'Email &lt;'.$groupEmail.'&gt; is not valid and not exist!';
         }*/
 
-        //$mail->send();
+        $mail->send();
         session_start();
         $_SESSION['active_speurtocht_id']=$_GET['id'];
         header("location:admin.speurtocht.php?id=".$_GET['id']);

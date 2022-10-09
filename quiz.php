@@ -2,7 +2,7 @@
 include 'dbcon.php';
 
 $sql = mysqli_query($conn,"SELECT naam FROM teams WHERE uuid = '$_GET[id]';");
-$sql1 = mysqli_query($conn, "SELECT vragen.id as vraag_id,vragen.vraag, vragen.type, teams.uuid, teams.speurtocht_id, teams.naam as teamName from teams inner join vragen on teams.speurtocht_id = vragen.speurtocht_id where teams.uuid = '$_GET[id]' ORDER BY RAND()");
+    $sql1 = mysqli_query($conn, "SELECT vragen.id as vraag_id,vragen.vraag, vragen.type, teams.uuid, teams.speurtocht_id, teams.naam as teamName from teams inner join vragen on teams.speurtocht_id = vragen.speurtocht_id  where teams.uuid = '$_GET[id]' ORDER BY RAND()");
 
 
 $result = mysqli_fetch_assoc($sql);
@@ -35,7 +35,13 @@ echo $result['naam'];
                 <div class="info">4. Je mag je groepsnaam aanpassen door het inputveld <span>hieronder</span> in te vullen</div>
             </div>
         <?php echo $_GET['id'];?>
-        <form action="add.player.to.speurtocht.php?id=<?php echo $_GET['id'];?>" method="post" class="teamNameForm buttons">
+        <script type="text/javascript">
+            window.history.forward();
+            function noBack() {
+                window.history.forward();
+            }
+        </script>
+        <form action="add.player.to.speurtocht.php?id=<?php echo $_GET['id'];?>&vraag_id=<?php echo $result1['vraag_id'];?>&speurtocht_id=<?php echo $_GET['speurtocht_id']; ?>" method="post" class="teamNameForm buttons">
             <div class="buttons">
                 <b class="mr-2">Uw groepsnaam is : </b> <input type="text" name="newName" class="teamNameInput pr-2 ml-2 border" required value="<?php echo $result['naam']; ?>">
             </div>
@@ -45,7 +51,10 @@ echo $result['naam'];
                 <a href="https://www.instagram.com/p/Cf5EQ6JDOWm/">
                 <button class="quit">Verlaat</button>
                 </a>
-                <a href="speurtocht.php?id=<?php echo $_GET['id'] ;?>&vraag_id=<?php echo $result1['vraag_id']; ?>">
+                <?php
+                echo $result1['vraag_id'];
+                ?>
+                <a href="speurtocht.php?id=<?php echo $_GET['id'];?>&vraag_id=<?php echo $result1['vraag_id'];?>">
                 <button  class="continue">Ga verder</button>
                 </a>
             </div>
