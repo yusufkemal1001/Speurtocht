@@ -7,7 +7,6 @@ $sql = mysqli_query($conn,"SELECT naam FROM teams WHERE uuid = '$_GET[id]';");
 
 $result = mysqli_fetch_assoc($sql);
 $result1 = mysqli_fetch_assoc($sql1);
-echo $result['naam'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +33,7 @@ echo $result['naam'];
                 <div class="info">3. Wanneer je een vraag hebt beantwoord, kan je <span>niet</span> meer terug</div>
                 <div class="info">4. Je mag je groepsnaam aanpassen door het inputveld <span>hieronder</span> in te vullen</div>
             </div>
+
         <?php echo $_GET['id'];?>
         <script type="text/javascript">
             window.history.forward();
@@ -42,6 +42,9 @@ echo $result['naam'];
             }
         </script>
         <form action="add.player.to.speurtocht.php?id=<?php echo $_GET['id'];?>&vraag_id=<?php echo $result1['vraag_id'];?>&speurtocht_id=<?php echo $_GET['speurtocht_id']; ?>" method="post" class="teamNameForm buttons">
+
+
+
             <div class="buttons">
                 <b class="mr-2">Uw groepsnaam is : </b> <input type="text" name="newName" class="teamNameInput pr-2 ml-2 border" required value="<?php echo $result['naam']; ?>">
             </div>

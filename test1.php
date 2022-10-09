@@ -1,7 +1,11 @@
 <?php 
 include 'dbcon.php';
+
 echo $_GET['id'];
 $sql = mysqli_query($conn, "select vragen.vraag,antwoorden.speurtocht_id, antwoorden.tekst,teams.naam, antwoorden.image,antwoorden.behaald,antwoorden.speurtocht_id from antwoorden left join teams on antwoorden.team_id = teams.uuid left join vragen on antwoorden.vraag_id = vragen.id where behaald = 0 and antwoorden.speurtocht_id= '$_GET[id]' order by antwoorden.id asc ;");
+
+$sql = mysqli_query($conn, "SELECT antwoorden.id, antwoorden.tekst, antwoorden.image, antwoorden.behaald, vragen.vraag FROM antwoorden INNER JOIN vragen ON antwoorden.vraag_id = vragen.id WHERE behaald = 0 AND antwoorden.speurtocht_id = '$_GET[id]';" );
+
 $sql1 = mysqli_query($conn, "SELECT COUNT(id) FROM antwoorden WHERE behaald = 0 AND speurtocht_id = '$_GET[id]';");
 
 $row = mysqli_fetch_assoc($sql);
