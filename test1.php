@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {?>
         <h3 id="title" class="text-center m-5"><?php if ($row1['COUNT(id)'] != 0) {
                 echo $row['vraag'];
             } else {
-                echo "Geen antwoorden om na te kijken";
+                echo "Niks om na te kijken";
             } ?></h3>
     </div>
     <?php if ($row1['COUNT(id)'] > 0) : ?>
