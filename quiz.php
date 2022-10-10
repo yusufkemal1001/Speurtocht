@@ -23,7 +23,7 @@ $result1 = mysqli_fetch_assoc($sql1);
 <body>
     <div class="start_btn"><button>Spelen!</button></div>
 
-    <div class="info_box">
+    <div class="info_box m-auto w-3/4">
         <div class="info_title">
             <span>Regels van deze Speurtocht</span>
         </div>
@@ -33,30 +33,26 @@ $result1 = mysqli_fetch_assoc($sql1);
                 <div class="info">3. Wanneer je een vraag hebt beantwoord, kan je <span>niet</span> meer terug</div>
                 <div class="info">4. Je mag je groepsnaam aanpassen door het inputveld <span>hieronder</span> in te vullen</div>
             </div>
-
-        <?php echo $_GET['id'];?>
         <script type="text/javascript">
             window.history.forward();
             function noBack() {
                 window.history.forward();
             }
         </script>
-        <form action="add.player.to.speurtocht.php?id=<?php echo $_GET['id'];?>&vraag_id=<?php echo $result1['vraag_id'];?>&speurtocht_id=<?php echo $_GET['speurtocht_id']; ?>" method="post" class="teamNameForm buttons">
+        <form action="add.player.to.speurtocht.php?id=<?php echo $_GET['id'];?>&vraag_id=<?php echo $result1['vraag_id'];?>&speurtocht_id=<?php echo $_GET['speurtocht_id']; ?>" method="post" class="w-3/4 m-auto">
 
 
 
-            <div class="buttons">
-                <b class="mr-2">Uw groepsnaam is : </b> <input type="text" name="newName" class="teamNameInput pr-2 ml-2 border" required value="<?php echo $result['naam']; ?>">
+            <div class="m-auto text-center justify-center items-center">
+                <b class="mb-2" >Uw groepsnaam is </b><br>
+                <input type="text" name="newName" class="teamNameInput border" style="margin-top: 10px; margin-bottom: 10px;" required value="<?php echo $result['naam']; ?>">
             </div>
-            <div class="buttons">
+            <div class="buttons m-auto">
 
 
                 <a href="https://www.instagram.com/p/Cf5EQ6JDOWm/">
                 <button class="quit">Verlaat</button>
                 </a>
-                <?php
-                echo $result1['vraag_id'];
-                ?>
                 <a href="speurtocht.php?id=<?php echo $_GET['id'];?>&vraag_id=<?php echo $result1['vraag_id'];?>">
                 <button  class="continue">Ga verder</button>
                 </a>

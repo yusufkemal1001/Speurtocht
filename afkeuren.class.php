@@ -6,7 +6,7 @@
     $previous = "javascript:history.go(-1)";
 
     if (mysqli_query($conn,$sql)){
-        header("location:test1.php");
+        header("location:admin.speurtocht.php?id=".$_GET['speurtocht_id']);
 
     }else{
         echo 'Er is een fout opgetreden';

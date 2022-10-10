@@ -164,7 +164,7 @@ button{
 }
 
 .tbg {
-    height: 720px;
+
     width: 400px;
     background-color: #fff;
     margin: 0 auto;
@@ -172,7 +172,7 @@ button{
     border-radius: 10px;
 }
 .tbgwrap { padding: 10px; }
-.theader { height: 65px; border-bottom: 1px solid #c0c0c0; }
+
 .theader i.fa-comments {
     color: #c0c0c0;
     font-size: 40px;

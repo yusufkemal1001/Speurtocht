@@ -36,20 +36,20 @@ body {
     cursor: pointer;
 }
 
+
 .info_box {
-    width: 600px;
+    max-width: 600px;
     background: white;
     border-radius: 5px;
 }
-
 .info_box .info_title {
-    height: 60px;
+    max-height: 15%;
     width: 100%;
     border-bottom: 1px solid black;
     display: flex;
     padding: 0 35px;
     align-items: center;
-    font-size: 20px;
+
     font-weight: 600;
 }
 
@@ -70,7 +70,7 @@ body {
     height: 60px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 
 }
 .teamNameForm{
@@ -94,22 +94,22 @@ body {
     cursor: pointer;
 }
 
-.buttons button.continue {
+.buttons button.quit {
     color: #70ABAF;
     border-color: #70ABAF;
     background: #fff;
 }
 
-.buttons button.continue:hover {
+.buttons button.quit:hover {
     background: #70ABAF;
     color: white;
 }
 
-.buttons button.quit {
+.buttons button.continue {
     color: #fff;
 }
 
-.buttons button.quit:hover {
+.buttons button.continue:hover {
     color: #70ABAF;
     background: #fff;
 }

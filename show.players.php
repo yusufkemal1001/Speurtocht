@@ -55,7 +55,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div style="font-size: 12px; float: right; font-weight: bold;">
                     <?php if ($countAnswers==$count){
-                        echo "Alle vragen zijn bantwoord!";
+                        echo "Alle vragen zijn beantwoord!";
                     }?>
                 </div>
             </div>
