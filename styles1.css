@@ -94,13 +94,13 @@ body {
     cursor: pointer;
 }
 
-.buttons button.quit {
+.quit {
     color: #70ABAF;
     border-color: #70ABAF;
     background: #fff;
 }
 
-.buttons button.quit:hover {
+.quit:hover {
     background: #70ABAF;
     color: white;
 }

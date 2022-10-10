@@ -4,17 +4,9 @@
     <list default="true" id="fb04de34-e862-43cd-949c-afd38253c617" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.speurtocht.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.speurtocht.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/afkeuren.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/afkeuren.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dbcon.php" beforeDir="false" afterPath="$PROJECT_DIR$/dbcon.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goedkeuren.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/goedkeuren.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz.php" beforeDir="false" afterPath="$PROJECT_DIR$/quiz.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save-image.php" beforeDir="false" afterPath="$PROJECT_DIR$/save-image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save-text.php" beforeDir="false" afterPath="$PROJECT_DIR$/save-text.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/show.players.php" beforeDir="false" afterPath="$PROJECT_DIR$/show.players.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/speurtocht.php" beforeDir="false" afterPath="$PROJECT_DIR$/speurtocht.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stop.speurtocht.php" beforeDir="false" afterPath="$PROJECT_DIR$/stop.speurtocht.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles1.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles1.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test1.php" beforeDir="false" afterPath="$PROJECT_DIR$/test1.php" afterDir="false" />
     </list>
@@ -80,7 +72,7 @@
       <workItem from="1664371069944" duration="1431000" />
       <workItem from="1664373999498" duration="448000" />
       <workItem from="1664374570257" duration="33296000" />
-      <workItem from="1664983677430" duration="47868000" />
+      <workItem from="1664983677430" duration="48738000" />
     </task>
     <servers />
   </component>

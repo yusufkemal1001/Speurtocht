@@ -23,6 +23,7 @@ if ($result->num_rows > 0) {?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5">
     <link rel="stylesheet" href="dist/output.css">
     <link rel="stylesheet" href="styles.css">
 
@@ -30,8 +31,8 @@ if ($result->num_rows > 0) {?>
 </head>
 
 <body style=" margin-top:100px">
-<div class="tbg " style="margin-bottom: 20px;margin-top: 1.25rem;">
-    <div class="theader">
+<div class="tbg " style="margin-bottom: 20px;margin-top: 1.25rem; ">
+    <div class="theader" style="border-bottom: 1px solid;">
         <h3 id="title" class="text-center m-5"><?php if ($row1['COUNT(id)'] != 0) {
                 echo $row['vraag'];
             } else {
@@ -42,7 +43,7 @@ if ($result->num_rows > 0) {?>
     <div class="tbgwrap">
 
         <?php if ($row['image']!= 0){ ?>
-        <div class="w-4/4 m-auto p-2">
+        <div class="w-4/4 m-auto p-2 " style="">
             <?php if ($row1['COUNT(id)'] > 0) : ?>
                 <?php if ($row['image'] != null) : ?>
                     <img src="uploads/<?php echo $row['image'] ?>" width="100%"/>
@@ -50,7 +51,7 @@ if ($result->num_rows > 0) {?>
             <?php endif; ?>
         </div>
         <?php } else { ?>
-        <div class="text-2xl text-center m-auto mt-10">
+        <div class="text-2xl text-center m-auto " style="margin-top: 10px; margin-bottom: 20px;">
         <?php if ($row1['COUNT(id)'] > 0) : ?>
             <?php if ($row['tekst'] != null) : ?>
                 <h4> <b>Antwoord: </b><?php if ($row1['COUNT(id)'] != 0) {
@@ -60,7 +61,7 @@ if ($result->num_rows > 0) {?>
         <?php endif; ?>
         </div>
         <?php } ?>
-        <div class=" flex p-5 " style="justify-content: space-around;">
+        <div class=" flex p-5 " style="justify-content: space-around; border-top: black solid 1px;">
             <a href="goedkeuren.class.php?id=<?php echo $row['id']; ?>&speurtocht_id=<?php echo $_GET['id']; ?>" class="text-2xl"><i class="fa-solid fa-check mr-2 bg-lime-500" style="color: rgb(132 204 22);"></i>Goed
                 </a>
             <a href="afkeuren.class.php?id=<?php echo $row['id']; ?>&speurtocht_id=<?php echo $_GET['id']; ?>" class="text-2xl"><i class="fa-solid fa-xmark bg-rose-500 mr-2"style="color: rgb(244 63 94);"></i>Fout

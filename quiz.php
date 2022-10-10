@@ -50,8 +50,8 @@ $result1 = mysqli_fetch_assoc($sql1);
             <div class="buttons m-auto">
 
 
-                <a href="https://www.instagram.com/p/Cf5EQ6JDOWm/">
-                <button class="quit">Verlaat</button>
+                <a href="https://www.instagram.com/p/Cf5EQ6JDOWm/" class="quit">
+                Verlaat
                 </a>
                 <a href="speurtocht.php?id=<?php echo $_GET['id'];?>&vraag_id=<?php echo $result1['vraag_id'];?>">
                 <button  class="continue">Ga verder</button>
