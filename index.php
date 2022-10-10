@@ -17,10 +17,10 @@ if (isset($_POST["submit"])){
         header("Location:dashboard.php");
     }elseif ($result == 10){
         echo
-        "<script>alert('Gebruiker niet gevonden');</script>";
+        "<script>alert('Verkeerde e-mail of wachtwoord');</script>";
     }elseif ($result == 100){
         echo
-        "<script>alert('Gebruiker niet gevonden');</script>";
+        "<script>alert('Verkeerde e-mail of wachtwoord');</script>";
     }
 }
 ?>
